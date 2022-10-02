@@ -18,6 +18,12 @@ Enter your local repository and check out the `staging` branch, where you'll mak
 
 	cd frohlichlab.github.io
 	git checkout staging
+ 
+## Setup dependencies
+
+To install all necessary dependencies, first make sure that you have a running installation of ruby. If not install ruby via `apt-get` or `brew`. To install all necessary ruby gems run:
+
+    bundle install
 
 ## Overview of the structure
 

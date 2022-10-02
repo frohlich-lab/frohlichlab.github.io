@@ -26,7 +26,7 @@ navorder: 2
 				<p class="note">{{ member.position }}</p>
 				</div>
 		</div>
-    </div>	  
+    </div>
 	{% if colindex == 0 %} <!-- closing a row -->
 	</div><div class="bigspacer"></div>
 	{% endif %}
@@ -44,10 +44,12 @@ navorder: 2
 	</div>
 </div>
 
+<!--
 <div class="bigspacer"></div>
 <hr/>
 <div class="bigtitle text-center">Alumni</div>
 <div class="bigspacer"></div>
+-->
 
 {% assign alumni = site.categories.team | where: "alum","true"%}
 {% assign memberindex = 0 %}
@@ -67,11 +69,12 @@ navorder: 2
 				<p class="note">{{ member.position }}</p>
 				</div>
 		</div>
-    </div>	  
+    </div>
 	{% if colindex == 0 %} <!-- closing a row -->
 	</div><div class="bigspacer"></div>
 	{% endif %}
 {% endfor %}
+
 {% if colindex != 0 %} <!-- close last open row -->
 </div><div class="bigspacer"></div>
 {% endif %}
