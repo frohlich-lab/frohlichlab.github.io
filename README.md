@@ -1,6 +1,6 @@
-# The Drummond Lab main website
+# The Frohlich Lab main website
 
-Our website, http://drummondlab.org, is a [GitHub Pages](https://pages.github.com/) site built with [Jekyll](https://jekyllrb.com/) and [Bootstrap](http://getboostrap.com), originally pulled from [Trevor Bedford's site](http://bedford.io) and heavily modified.
+Our website, http://frohlichlab.com, is a [GitHub Pages](https://pages.github.com/) site built with [Jekyll](https://jekyllrb.com/) and [Bootstrap](http://getboostrap.com), originally pulled from [Trevor Bedford's site](http://bedford.io) and the [Drummond Lab site](http://drummondlab.org).
 
 # Editing the site
 
@@ -8,15 +8,15 @@ Here's a step-by-step guide to making modifications to the site, focused initial
 
 ## Clone the repository
 
-If you're a member of the [Drummond Lab team](https://github.com/orgs/drummondlab/teams/drummond-lab-team), you have access to the website repository.
+If you're a member of the [Frohlich Lab organization](https://github.com/frohlich-lab), you have access to the website repository.
 
 To clone the repository, making a local copy on your machine:
 
-	git clone git@github.com:drummondlab/drummondlab.github.io
+	git clone git@github.com:frohlich-lab/frohlichlab.github.io
 
 Enter your local repository and check out the `staging` branch, where you'll make changes before promoting them to the `master` branch and publishing them:
 
-	cd drummondlab.github.io
+	cd frohlichlab.github.io
 	git checkout staging
 
 ## Overview of the structure
@@ -92,7 +92,7 @@ Fonts, colors, spacing, and similar stylings are separate from the template page
 
 ### To-dos
 
-See Issues on [the site](https://github.com/drummondlab/drummondlab.github.io).
+See Issues on [the site](https://github.com/frohlich-lab/frohlichlab.github.io).
 
 
 ## License
