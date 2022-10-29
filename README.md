@@ -86,7 +86,7 @@ and push to GitHub:
 
 	git push
 
-Changes won't be immediate, so wait a minute or two while GitHub's servers regenerate the site and publish it. Check to make sure the public site http://drummondlab.org looks the way you intend.
+Changes won't be immediate, so wait a minute or two while GitHub's servers regenerate the site and publish it. Check to make sure the public site http://frohlichlab.com looks the way you intend.
 
 Finally, check out `staging` again so that you don't accidentally start working on the `master` branch the next time you sit down:
 

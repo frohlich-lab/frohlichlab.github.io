@@ -1,14 +1,14 @@
 ---
 layout: default
-title: About the Lab
+title: Join the lab
 categories:
  - home
 ---
 {% include JB/setup %}
 {% for page in site.categories.misc %}
-{% if page.about %}
-	{% assign aboutpage = page %}
+{% if page.title == "Join" %}
+	{% assign joinpage = page %}
 {% endif %}
 {% endfor %}
 
-{{ aboutpage.content }}
+{{ joinpage.content }}
