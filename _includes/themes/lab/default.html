@@ -23,6 +23,10 @@
 
     <!-- icon -->
     <link rel="shortcut icon" href="{{ ASSET_PATH }}/images/logo/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ ASSET_PATH }}/images/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ ASSET_PATH }}/images/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ ASSET_PATH }}/images/logo/favicon-16x16.png">
+    <link rel="manifest" href="{{ ASSET_PATH }}/images/logo/site.webmanifest">
 
     <!-- Custom fonts and icons via Font Awesome, http://fortawesome.github.io/Font-Awesome/ -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
@@ -84,17 +88,6 @@
           {% assign pages_list = (site.pages | sort: 'navorder') %}
           {% assign group = 'navigation' %}
           {% include JB/pages_list %}
-          <li class="dropdown nav navbar-nav">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              More <span class="caret"></span>
-            </a>
-
-            <ul class="dropdown-menu nav navbar-nav" role="menu">
-              {% assign pages_list = (site.pages | sort: 'navorder') %}
-              {% assign group = 'subnavigation' %}
-              {% include JB/pages_list %}
-            </ul>
-            </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
