@@ -1,7 +1,7 @@
 ---
 layout: paper
 title: "AMICI: high-performance sensitivity analysis for large ordinary differential equation models"
-authors: "Fröhlich F, Weindl D, Schälte Y, Pathirana D, Paszkowski {, Lines GT, Stapor P, Hasenauer J"
+authors: "Fröhlich F, Weindl D, Schälte Y, Pathirana D, Paszkowski Ł, Lines GT, Stapor P, Hasenauer J"
 year: 2021
 ref: "Fröhlich et al. 2021. Bioinformatics"
 journal: "Bioinformatics"

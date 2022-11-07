@@ -1,7 +1,7 @@
 ---
 layout: paper
 title: "Efficient computation of adjoint sensitivities at steady-state in ODE models of biochemical reaction networks"
-authors: "Lakrisenko P, Stapor P, Grein S, Paszkowski {, Pathirana D, Fröhlich F, Lines GT, Weindl D, Hasenauer J"
+authors: "Lakrisenko P, Stapor P, Grein S, Paszkowski Ł, Pathirana D, Fröhlich F, Lines GT, Weindl D, Hasenauer J"
 year: 2022
 ref: "Lakrisenko et al. 2022. bioRxiv"
 journal: "bioRxiv"

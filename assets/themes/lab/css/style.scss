@@ -82,8 +82,8 @@ p {
 	height: 5px;
 }
 
-a.off { 
-	color: inherit; 
+a.off {
+	color: inherit;
 	border-bottom: none;
 }
 
@@ -158,11 +158,27 @@ strong {
 	padding: 5px;
 }
 
+.toollogo {
+	width: 180px;
+	height: auto;
+	padding: 5px;
+}
+
+.toollogobox {
+	height: 90px;
+	line-height: 65px;
+	font-weight: $heavy-font-weight;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	text-shadow: 1.5px 1.5px #ffffff;
+}
+
 .logobox {
 	height: 180px;
 	line-height: 65px;
 	font-weight: $heavy-font-weight;
-	display: table-cell; 
+	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 	text-shadow: 1.5px 1.5px #ffffff;
@@ -170,13 +186,13 @@ strong {
 
 // navbar
 
-.navbar-brand { 
-	font-size: 30px; 
+.navbar-brand {
+	font-size: 30px;
 	font-weight: $font-weight-base;
 }
 
-.navbar-nav { 
-	font-size: 30px; 
+.navbar-nav {
+	font-size: 30px;
 	font-weight: $font-weight-base;
 	a {
 		color: black;
@@ -243,7 +259,7 @@ strong {
   bottom:0px;
 }
 
-.carousel-overlay { 
+.carousel-overlay {
 	position:absolute;
 	z-index:12;
 	top:50%;
@@ -271,13 +287,13 @@ strong {
 }
 
 .title {
-	font-size: 45px; 
+	font-size: 45px;
 	line-height: 50px;
 	font-weight: 100;
 }
 
 .bigtitle {
-	font-size: 60px; 
+	font-size: 60px;
 	line-height: 65px;
 	font-weight: 100;
 }
@@ -324,7 +340,7 @@ strong {
 
 	h1 {
 
-	}	
+	}
 }
 .note {
 	font-size: $font-size-base;
@@ -335,7 +351,7 @@ strong {
 		color: black;
 		border-bottom: thin dotted;
 		/*&:hover {
-			border-bottom: thin solid;	
+			border-bottom: thin solid;
 		}*/
 	}
 
@@ -351,7 +367,7 @@ strong {
 }
 
 .journal-title {
-	
+
 }
 
 .journal {

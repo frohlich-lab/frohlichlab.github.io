@@ -66,22 +66,22 @@ CODE_LINKS = {
 }
 
 ACCENTS = {
-    '\"o': r'ö',
-    '\"u': r'ü',
-    '\"a': r'ä',
-    '\"i': r'i',
-    '\"O': r'Ö',
-    '\"U': r'Ü',
-    '\"A': r'Ä',
-    '\`a': r'à',
-    "\'a": r'á',
-    '\`e': r'è',
-    "\'e": r'é',
-    '\`o': r'ò',
-    "\'o": r'ó',
-    '\`u': r'ù',
-    "\'u": r'ú',
-    "\L": r'Ł',
+    r'\"o': r'ö',
+    r'\"u': r'ü',
+    r'\"a': r'ä',
+    r'\"i': r'i',
+    r'\"O': r'Ö',
+    r'\"U': r'Ü',
+    r'\"A': r'Ä',
+    r'\`a': r'à',
+    r"\'a": r'á',
+    r'\`e': r'è',
+    r"\'e": r'é',
+    r'\`o': r'ò',
+    r"\'o": r'ó',
+    r'\`u': r'ù',
+    r'\'u': r'ú',
+    r'\L': r'Ł',
     r'\v{s}': r'š',
     r'\c{s}': r'ş',
     r'\ss': r'ß',
@@ -91,11 +91,9 @@ PAPER_PDF_PATH = '/pdfs/papers/'
 
 def sanitize(name: str) -> str:
     for s, t in ACCENTS.items():
-        name = name.replace(f'{{\{s}}}', t)
-        name = name.replace(f'\{s}', t)
         name = name.replace(f'{{{s}}}', t)
         name = name.replace(f'{s}', t)
-    if "\\" in name:
+    if "\\" in name or "{{" in name or "}}" in name:
         print(
             f'name {name} contains an accents that could not be sanitized, '
             'please add the respective accent to the ACCENTS variable in '
@@ -146,7 +144,7 @@ for pubkey, entry in bib_data.entries.items():
     template_data['AUTHORS'] = ', '.join(
         ' '.join((
             ' '.join(sanitize(name) for name in author.last_names),
-            ''.join(name[0].upper()
+            ''.join(sanitize(name)[0].upper()
                     for name in author.first_names + author.middle_names)
         ))
         for author in entry.persons['author']
