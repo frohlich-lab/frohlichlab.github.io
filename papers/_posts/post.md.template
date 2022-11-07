@@ -1,0 +1,20 @@
+---
+layout: paper
+title: "$TITLE"
+authors: "$AUTHORS"
+year: $YEAR
+ref: "$FIRSTAUTH et al. $YEAR. $JOURNAL_ABBREV"
+journal: "$JOURNAL"
+pdflink: $PDFLINK
+pdf: $PDF
+doi: $DOI
+volume: $VOLUME
+issue: $ISSUE
+pages: "$PAGES"
+preprint: $PREPRINT
+code: $CODE
+---
+
+# Abstract
+
+$ABSTRACT
