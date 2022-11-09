@@ -9,7 +9,7 @@ twitter: fabfrohlich
 github: ffroehlich
 scholar: pGYETGQAAAAJ
 image: /assets/images/team/ff.jpeg
-cv: /assets/pdfs/csv/ff.pdf
+cv: /assets/pdfs/cvs/ff.pdf
 alum: false
 ---
 Fabian is an incoming Group Leader at the [Francis Crick Institute].
