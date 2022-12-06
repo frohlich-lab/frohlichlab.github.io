@@ -3,17 +3,16 @@ layout: default
 title: Software
 description: "Tools developed in the lab"
 group: navigation
-navorder: 1
+navorder: 2
 ---
 {% include JB/setup %}
 
-<h1>Software Tools</h1>
 <div class="bigspacer"></div>
 
 {% for project in site.categories.tools %}
   <div class="row">
     <div class="col-md-1 logobox">
-      <a href="{{ paper.url }}">
+      <a href="{{ project.url }}">
         <img class="ml-2" width=75 class="media-object" src="{{ project.image }}">
       </a>
     </div>

@@ -1,12 +1,11 @@
 ---
 layout: default
-title: Fröhlich Lab / Join
-categories:
- - home
+title: Join
 ---
 {% include JB/setup %}
+
 {% for page in site.categories.misc %}
-{% if page.title == "Join" %}
+{% if page.join %}
 	{% assign joinpage = page %}
 {% endif %}
 {% endfor %}

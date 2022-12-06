@@ -1,10 +1,13 @@
 ---
 layout: default
 title: Papers
+description: "Papers of the lab"
 group: navigation
-categories:
- - papers
+navorder: 1
 ---
+{% include JB/setup %}
+
+<div class="bigspacer"></div>
 
 {% for paper in site.categories.papers %}
 {% capture prev_year %}{{ this_year }}{% endcapture %}

@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Research"
+description: "Research Interests"
+group: navigation
+navorder: 0
+---
+{% include JB/setup %}
+
+{% for page in site.categories.misc %}
+{% if page.research %}
+	{% assign researchpage = page %}
+{% endif %}
+{% endfor %}
+
+{{ researchpage.content }}
+
+<div class="hugespacer"></div>
+
+{% for project in site.categories.research %}
+  <div class="row">
+    <div class="col-md-5 logobox">
+    	<img class="ml-2" width=400 class="media-object" src="{{ project.image }}">
+    </div>
+    <div class="col-md-7 projectbox">
+      <div class="media">
+        <div class="media-body">
+          <div class="head media-heading mb-1">{{ project.title }}</div>
+        </div>
+      </div>
+      <div class="smallspacer"></div>
+      <div class="note">
+        {{ project.content }}
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <div class="hugespacer"></div>
+{% endfor %}
