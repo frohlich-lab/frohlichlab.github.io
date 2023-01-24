@@ -61,8 +61,8 @@ CODE_LINKS = {
     '2022-02-18-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
     '2022-05-07-shaikh-biosimulators-platform': 'https://github.com/biosimulators/Biosimulators',
     '2022-07-13-fröhlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
-    '2022-08-11-lakrisenko-adjoint-steadystate': '',
     '2022-10-07-chen-erk-senescence': '',
+    '2023-01-03-lakrisenko-adjoint-steadystate': '',
 }
 
 ACCENTS = {

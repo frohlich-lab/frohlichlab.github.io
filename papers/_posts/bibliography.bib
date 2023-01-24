@@ -27,22 +27,24 @@
     pages = {1-28},
     abstract = {Ordinary differential equation (ODE) models are widely used to study biochemical reactions in cellular networks since they effectively describe the temporal evolution of these networks using mass action kinetics. The parameters of these models are rarely known a priori and must instead be estimated by calibration using experimental data. Optimization-based calibration of ODE models on is often challenging, even for low-dimensional problems. Multiple hypotheses have been advanced to explain why biochemical model calibration is challenging, including non-identifiability of model parameters, but there are few comprehensive studies that test these hypotheses, likely because tools for performing such studies are also lacking. Nonetheless, reliable model calibration is essential for uncertainty analysis, model comparison, and biological interpretation. We implemented an established trust-region method as a modular Python framework (fides) to enable systematic comparison of different approaches to ODE model calibration involving a variety of Hessian approximation schemes. We evaluated fides on a recently developed corpus of biologically realistic benchmark problems for which real experimental data are available. Unexpectedly, we observed high variability in optimizer performance among different implementations of the same mathematical instructions (algorithms). Analysis of possible sources of poor optimizer performance identified limitations in the widely used Gauss-Newton, BFGS and SR1 Hessian approximation schemes. We addressed these drawbacks with a novel hybrid Hessian approximation scheme that enhances optimizer performance and outperforms existing hybrid approaches. When applied to the corpus of test models, we found that fides was on average more reliable and efficient than existing methods using a variety of criteria. We expect fides to be broadly useful for ODE constrained optimization problems in biochemical models and to be a foundation for future methods development.},
     number = {7},
-		eprint = {https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1010322&type=printable}
+	eprint = {https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1010322&type=printable}
 }
 
 @article {adjoint-steadystate,
 	author = {Lakrisenko, Polina and Stapor, Paul and Grein, Stephan and Paszkowski, {\L}ukasz and Pathirana, Dilan and Fr{\"o}hlich, Fabian and Lines, Glenn Terje and Weindl, Daniel and Hasenauer, Jan},
-	title = {Efficient computation of adjoint sensitivities at steady-state in ODE models of biochemical reaction networks},
-	elocation-id = {2022.08.08.503176},
-	year = {2022},
-	month = {08},
-	day = {11},
-	doi = {10.1101/2022.08.08.503176},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {Dynamical models in the form of systems of ordinary differential equations have become a standard tool in systems biology. Many parameters of such models are usually unknown and have to be inferred from experimental data. Gradient-based optimization has proven to be effective for parameter estimation. However, computing gradients becomes increasingly costly for larger models, which are required for capturing the complex interactions of multiple biochemical pathways. Adjoint sensitivity analysis has been pivotal for working with such large models, but methods tailored for steady-state data are currently not available. We propose a new adjoint method for computing gradients, which is applicable if the experimental data include steady-state measurements. The method is based on a reformulation of the backward integration problem to a system of linear algebraic equations. The evaluation of the proposed method using real-world problems shows a speedup of total simulation time by a factor of up to 4.4. Our results demonstrate that the proposed approach can achieve a substantial improvement in computation time, in particular for large-scale models, where computational efficiency is critical.Author summary Large-scale dynamical models are nowadays widely used for the analysis of complex processes and the integration of large-scale data sets. However, computational cost is often a bottleneck. Here, we propose a new gradient computation method that facilitates the parameterization of large-scale models based on steady-state measurements. The method can be combined with existing gradient computation methods for time-course measurements. Accordingly, it is an essential contribution to the environment of computationally efficient approaches for the study of large-scale screening and omics data, but not tailored to biological applications, and, therefore, also useful beyond the field of computational biology.},
-	URL = {https://www.biorxiv.org/content/early/2022/08/11/2022.08.08.503176},
-	eprint = {https://www.biorxiv.org/content/early/2022/08/11/2022.08.08.503176.full.pdf},
-	journal = {bioRxiv}
+    doi = {10.1371/journal.pcbi.1010783},
+    journal = {PLoS Computational Biology},
+    publisher = {Public Library of Science},
+    title = {Efficient computation of adjoint sensitivities at steady-state in ODE models of biochemical reaction networks},
+    year = {2023},
+    month = {01},
+    day = {03},
+    volume = {19},
+    url = {https://doi.org/10.1371/journal.pcbi.1010783},
+    pages = {1-19},
+    abstract = {Dynamical models in the form of systems of ordinary differential equations have become a standard tool in systems biology. Many parameters of such models are usually unknown and have to be inferred from experimental data. Gradient-based optimization has proven to be effective for parameter estimation. However, computing gradients becomes increasingly costly for larger models, which are required for capturing the complex interactions of multiple biochemical pathways. Adjoint sensitivity analysis has been pivotal for working with such large models, but methods tailored for steady-state data are currently not available. We propose a new adjoint method for computing gradients, which is applicable if the experimental data include steady-state measurements. The method is based on a reformulation of the backward integration problem to a system of linear algebraic equations. The evaluation of the proposed method using real-world problems shows a speedup of total simulation time by a factor of up to 4.4. Our results demonstrate that the proposed approach can achieve a substantial improvement in computation time, in particular for large-scale models, where computational efficiency is critical.},
+    number = {1},
+	eprint = {https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1010783&type=printable},
 }
 
 @article {allosteric-rewiring,
