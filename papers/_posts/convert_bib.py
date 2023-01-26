@@ -25,6 +25,7 @@ J_ABBREV = {
     'Briefings in Bioinformatics': 'Brief. Bioinform.',
     'Nucleic Acids Research': 'Nucleic Acids Res.',
     'npj Systems Biology and Applications': 'npj Syst. Biol. Appl.',
+    'Molecular Systems Biology': 'Mol. Syst. Biol.',
 }
 
 MAPPINGS = {
@@ -58,11 +59,11 @@ CODE_LINKS = {
     '2021-04-02-fröhlich-amici-simulation': 'https://github.com/AMICI-dev/AMICI',
     '2021-10-09-villaverde-calibration-protocol': 'https://github.com/ICB-DCM/model_calibration_protocol',
     '2021-12-28-schmucker-drug-combinations': 'https://github.com/Sandholm-Lab/treatment-opt-pancancer',
-    '2022-02-18-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
     '2022-05-07-shaikh-biosimulators-platform': 'https://github.com/biosimulators/Biosimulators',
     '2022-07-13-fröhlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
     '2022-10-07-chen-erk-senescence': '',
     '2023-01-03-lakrisenko-adjoint-steadystate': '',
+    '2023-01-26-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
 }
 
 ACCENTS = {
@@ -88,6 +89,11 @@ ACCENTS = {
 }
 
 PAPER_PDF_PATH = '/pdfs/papers/'
+
+# cleanup
+for p in Path(__file__).parent.glob('*.md'):
+    print(f'removing {p}')
+    p.unlink()
 
 def sanitize(name: str) -> str:
     for s, t in ACCENTS.items():
