@@ -1,6 +1,6 @@
 ---
 layout: project
-title: System State to Pathway Dynamics
+title: System State to Molecular Processes
 image: /assets/images/projects/contextualization.png
 ---
 
