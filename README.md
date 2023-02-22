@@ -14,10 +14,10 @@ To clone the repository, making a local copy on your machine:
 
 	git clone git@github.com:frohlich-lab/frohlichlab.github.io
 
-Enter your local repository and check out the `staging` branch, where you'll make changes before promoting them to the `master` branch and publishing them:
+Enter your local repository and check out a new branch `<my-feature>` from the `main` branch, where you'll make changes. Replace `<my-feature>` with a short, informative description of what you will change.
 
 	cd frohlichlab.github.io
-	git checkout staging
+	git checkout -b <my-feature> main
  
 ## Setup dependencies
 
@@ -37,24 +37,20 @@ For most common actions---adding a lab member, paper, protocol, or news item---y
 
 For example, suppose you want to add a news item, which will appear on the front page, announcing that you have created a yeast strain capable of secreting high-quality chardonnay. Go into the `news/_posts` folder. Copy one of the existing items into a new file named with today's date (it matters!) and a brief title:
 
-	cp 2017-12-15-allan-tenure.md 2020-01-31-wine-yeast.md
+	cp 2022-11-09-postdoc-hiring.md 2023-01-31-wine-yeast.md
 
 The date is used by the generator; it's inelegant and perhaps there's a way to do it differently, but that's how it is for now. Now edit the new file to make the content what you want. Just open it in your favorite editor and type away. By the time you're done, hopefully you have something like this:
 
 	---
 	layout: news
 	title: "New yeast strain makes chardonnay"
-	author: "X. Obsequious Trenchant"
-	author_handle: "xot"
-	image: /assets/images/news/default-news.png
-	category: news
-	tags: [breakthrough]
+	tag: publication
 	---
 	Today we are thrilled to announce a new strain of yeast that secretes beautifully oaked chardonnay. See more details in our [preprint](http://biorxiv.org/content/10.1101/0000000)!
 
 Now add it to the repository:
 
-	git add 2020-01-31-wine-yeast.md
+	git add 2023-01-31-wine-yeast.md
 
 And, when you're happy with it, commit and push:
 
@@ -67,30 +63,13 @@ The same basic process is used to add protocols, team members, etc.
 
 ## Updating the public site
 
-All edits should be made on the `staging` branch. When you start work, make sure you're on the staging branch:
-
-	git checkout staging
-
-Once your edits are done, preview the site. Generate the pages and start the private webserver:
+All edits should be made on your feature branch. The `main` branch is protected and git will complain if you attempt to make any changes there. Once your edits are done, preview the site. Generate the pages and start a local webserver:
 
 	rake preview
 
 ...and then open the local test site, http://127.0.0.1:4000. Look at anything you've changed and make sure it's good to go.
 
-Then move the changes to the `master` branch:
-
-	git checkout master
-	git merge staging
-
-and push to GitHub:
-
-	git push
-
-Changes won't be immediate, so wait a minute or two while GitHub's servers regenerate the site and publish it. Check to make sure the public site http://frohlichlab.com looks the way you intend.
-
-Finally, check out `staging` again so that you don't accidentally start working on the `master` branch the next time you sit down:
-
-	git checkout staging
+Then create a [pull request](https://github.com/frohlich-lab/frohlichlab.github.io/compare) on github.com with `main` as base branch. Github will automatically run a build script to test everything is in ortder and request a review for the changes. After the pull request is merged, changes will automatically deployed through github actions and published on the `github-pages` branch. Check to make sure the public site http://frohlichlab.com looks the way you intend. Changes won't be immediate though, so wait a minute or two while GitHub's servers regenerate the site and publish it.
 
 ## Changing look and feel
 
