@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Invited Talk"
+title: "`Conference Talk"
 tag: conferences
 ---
 [Fabian] will give a talk at the  [Bonn Conference on Mathematical Life Sciences](https://www.uni-bonn.de/en/research-and-teaching/research-profile/excellence-strategy/conference-mathematical-life-sciences).
