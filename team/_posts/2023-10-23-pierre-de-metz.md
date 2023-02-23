@@ -13,7 +13,7 @@ alum: false
 ---
 Pierre is an incoming MSc Student Researcher at the [Francis Crick Institute].
 
-Before joining the Crick, Fabian was studying Machine Learning at [University College London]. He received his MEng from [Imperial College London], studying Chemical Engineering, where he was awarded a 1st Class Degree.
+Before joining the Crick, Pierre was studying towards an MSc in Machine Learning at [University College London]. He received his MEng from [Imperial College London], studying Chemical Engineering, where he was awarded a 1st Class Degree.
 
 [Francis Crick Institute]: https://www.crick.ac.uk
 [Human Frontier Science Program]: https://www.hfsp.org
