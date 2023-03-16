@@ -12,7 +12,7 @@ image: /assets/images/team/ff.jpeg
 cv: /assets/pdfs/cvs/ff.pdf
 alum: false
 ---
-Fabian is an incoming Group Leader at the [Francis Crick Institute].
+Fabian is a group leader at the [Francis Crick Institute].
 
 Before joining the Crick, Fabian was a [Human Frontier Science Program] Fellow in the [Laboratory of Systems Pharmacology] at [Harvard Medical School], working under the guidance of Peter Sorger. He received his PhD from [Technische Universität München], working with Jan Hasenauer and Fabian Theis at the [Institute of Computational Biology] at [Helmholtz Munich].
 
