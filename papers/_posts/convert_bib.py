@@ -7,9 +7,16 @@ from string import Template
 from pathlib import Path
 
 try:
+    requests
+except ImportError:
+    print('requests not installed, please run `pip3 install requests` first')
+    sys.exit()
+
+
+try:
     from pybtex.database.input import bibtex
-except ModuleError:
-    print('pybtex not installed, please run `pip install pybtex` first')
+except ImportError:
+    print('pybtex not installed, please run `pip3 install pybtex` first')
     sys.exit()
 
 # parse bibtex
@@ -18,6 +25,7 @@ bib_data = parser.parse_file('bibliography.bib')
 
 J_ABBREV = {
     'bioRxiv': 'bioRxiv',
+    'arXiv': 'arXiv',
     'Bioinformatics': 'Bioinformatics',
     'PLoS Computational Biology': 'PLoS Comput. Biol.',
     'PLoS One': 'PLoS One',
@@ -26,6 +34,7 @@ J_ABBREV = {
     'Nucleic Acids Research': 'Nucleic Acids Res.',
     'npj Systems Biology and Applications': 'npj Syst. Biol. Appl.',
     'Molecular Systems Biology': 'Mol. Syst. Biol.',
+    'Cell Reports': 'Cell Rep.'
 }
 
 MAPPINGS = {
@@ -61,9 +70,10 @@ CODE_LINKS = {
     '2021-12-28-schmucker-drug-combinations': 'https://github.com/Sandholm-Lab/treatment-opt-pancancer',
     '2022-05-07-shaikh-biosimulators-platform': 'https://github.com/biosimulators/Biosimulators',
     '2022-07-13-fröhlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
-    '2022-10-07-chen-erk-senescence': '',
     '2023-01-03-lakrisenko-adjoint-steadystate': '',
     '2023-01-26-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
+    '2023-05-02-schälte-schälte2023pypesto': 'https://github.com/ICB-DCM/pyPESTO',
+    '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
 }
 
 ACCENTS = {
