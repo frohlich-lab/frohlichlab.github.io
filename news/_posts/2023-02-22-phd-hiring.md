@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "We're Hiring (PhD, open)"
+title: "We're Hiring (PhD, closed)"
 tag: recruitment
 ---
 We are hiring for a PhD position. See the [job ad] for more details.
