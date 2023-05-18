@@ -72,7 +72,7 @@ CODE_LINKS = {
     '2022-07-13-fröhlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
     '2023-01-03-lakrisenko-adjoint-steadystate': '',
     '2023-01-26-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
-    '2023-05-02-schälte-schälte2023pypesto': 'https://github.com/ICB-DCM/pyPESTO',
+    '2023-05-02-schälte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
     '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
 }
 

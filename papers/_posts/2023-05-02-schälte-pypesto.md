@@ -1,7 +1,7 @@
 ---
 layout: paper
 title: "pyPESTO: A modular and scalable tool for parameter estimation for dynamic models"
-authors: "Schälte Y, Fröhlich F, Jost PJ, Vanhoefer J, Pathirana D, Stapor P, Lakrisenko P, Wang D, Raimúndez E, Merkt S, Schmiester L, St{ä"}dter P, Grein S, Dudkin E, Doresic D, Weindl D, Hasenauer J"
+authors: "Schälte Y, Fröhlich F, Jost PJ, Vanhoefer J, Pathirana D, Stapor P, Lakrisenko P, Wang D, Raimúndez E, Merkt S, Schmiester L, Städter P, Grein S, Dudkin E, Doresic D, Weindl D, Hasenauer J"
 year: 2023
 ref: "Schälte et al. 2023. arXiv"
 journal: "arXiv"
