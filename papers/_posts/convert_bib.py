@@ -18,6 +18,12 @@ try:
 except ImportError:
     print('pybtex not installed, please run `pip3 install pybtex` first')
     sys.exit()
+    
+try:
+    from unidecode import unidecode
+except ImportError:
+    print('pybtex not installed, please run `pip3 install pybtex` first')
+    sys.exit()
 
 # parse bibtex
 parser = bibtex.Parser()
@@ -52,27 +58,27 @@ MAPPINGS = {
 
 CODE_LINKS = {
     '2016-01-25-kazeroonian-moment-generation': 'https://github.com/CERENADevelopers/CERENA',
-    '2016-07-22-fröhlich-moment-estimation': 'https://doi.org/10.1371/journal.pcbi.1005030.s002',
-    '2017-01-23-fröhlich-adjoint-sensitivity': 'https://doi.org/10.1371/journal.pcbi.1005331.s002',
-    '2016-12-27-fröhlich-event-sensitivity': '',
+    '2016-07-22-frohlich-moment-estimation': 'https://doi.org/10.1371/journal.pcbi.1005030.s002',
+    '2017-01-23-frohlich-adjoint-sensitivity': 'https://doi.org/10.1371/journal.pcbi.1005331.s002',
+    '2016-12-27-frohlich-event-sensitivity': '',
     '2017-10-23-stapor-pesto-estimation': 'https://github.com/ICB-DCM/PESTO/',
     '2017-11-30-ligon-genssi-identifiability': 'https://github.com/genssi-developer/GenSSI',
     '2018-05-23-loos-hierarchical-heterogeneity': 'https://github.com/ICB-DCM/ODEMM',
     '2018-06-27-stapor-hessian-sensi': 'https://github.com/AMICI-dev/AMICI',
     '2018-08-23-villaverde-benchmarking-sensitivities': 'https://zenodo.org/record/1304034#.Y2k3Zi-B2-Z',
-    '2018-12-10-fröhlich-multiexperiment-nlme': 'https://github.com/ICB-DCM/MEMOIR',
-    '2018-12-26-fröhlich-pancancer-drug': 'https://zenodo.org/record/1472794#.Y2k3Ny-B2-Z',
+    '2018-12-10-frohlich-multiexperiment-nlme': 'https://github.com/ICB-DCM/MEMOIR',
+    '2018-12-26-frohlich-pancancer-drug': 'https://zenodo.org/record/1472794#.Y2k3Ny-B2-Z',
     '2019-07-26-schmiester-relative-scaling': 'https://github.com/ICB-DCM/CS_Signalling_ERBB_RAS_AKT',
     '2020-11-18-gerosa-erk-pulses': 'https://github.com/labsyspharm/marm1-supplement',
     '2021-01-26-schmiester-petab-problem': 'https://github.com/PEtab-dev/PEtab',
-    '2021-04-02-fröhlich-amici-simulation': 'https://github.com/AMICI-dev/AMICI',
+    '2021-04-02-frohlich-amici-simulation': 'https://github.com/AMICI-dev/AMICI',
     '2021-10-09-villaverde-calibration-protocol': 'https://github.com/ICB-DCM/model_calibration_protocol',
     '2021-12-28-schmucker-drug-combinations': 'https://github.com/Sandholm-Lab/treatment-opt-pancancer',
     '2022-05-07-shaikh-biosimulators-platform': 'https://github.com/biosimulators/Biosimulators',
-    '2022-07-13-fröhlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
+    '2022-07-13-frohlich-fides-optimizer': 'https://github.com/fides-dev/fides-benchmark',
     '2023-01-03-lakrisenko-adjoint-steadystate': '',
-    '2023-01-26-fröhlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
-    '2023-05-02-schälte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
+    '2023-01-26-frohlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
+    '2023-05-02-schalte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
     '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
 }
 
@@ -173,6 +179,7 @@ for pubkey, entry in bib_data.entries.items():
     pubid = Template(f'$YEAR-$MONTH-$DAY-{firstauth}-{pubkey}').safe_substitute(
         template_data
     )
+    pubid = unidecode(pubid)
     if pubid not in CODE_LINKS:
         print(
             f'Code link is missing for {pubid}. Please add link to the '
