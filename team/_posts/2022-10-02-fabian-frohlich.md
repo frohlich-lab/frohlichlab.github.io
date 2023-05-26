@@ -4,7 +4,7 @@ title: "Fabian Fröhlich"
 position: Principal Investigator
 nickname: Fabian
 handle: ff
-email: fabian_froehlich@hms.harvard.edu
+email: fabian.frohlich@crick.ac.uk
 twitter: fabfrohlich
 github: ffroehlich
 scholar: pGYETGQAAAAJ
