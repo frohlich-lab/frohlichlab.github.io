@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "We're Hiring (PostDoc, open)"
-tag: recruitment
+title: We're Hiring (PostDoc, closed)
+tags:
+  - recruitment
 ---
 We are hiring for a postdoctoral position. See the [job ad] for more details.
 
