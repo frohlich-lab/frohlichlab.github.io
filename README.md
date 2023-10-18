@@ -12,7 +12,7 @@ If you're a member of the [Frohlich Lab organization](https://github.com/frohlic
 
 To clone the repository, making a local copy on your machine:
 
-	git clone git@github.com:frohlich-lab/frohlichlab.github.io
+	git clone https://github.com/frohlich-lab/frohlichlab.github.io.git
 
 Enter your local repository and check out a new branch `<my-feature>` from the `main` branch, where you'll make changes. Replace `<my-feature>` with a short, informative description of what you will change.
 
