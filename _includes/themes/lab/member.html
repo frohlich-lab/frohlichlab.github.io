@@ -11,14 +11,17 @@
 			{% endif %}
 		</div>
 	</div>
-	<div class="col-md-9">
+	<div class="col-md-8">
 		<div class="pull-left pad-right media-body titlebox">
 			<div class="title media-heading">
 				{{ member.title }}
 			</div>
-			<br/>
 			<div class="smallhead">
 				{{ member.position }}
+			</div>
+			<br>
+			<div class="post">
+				{{ member.content }}
 			</div>
 		</div>
 	</div>				
@@ -86,10 +89,6 @@
 		{% endif %}						
 	</div>
 	<div class="col-md-8">	
-		<div class="post">
-			{{ content }}
-		</div>
-		
 		{% assign lastname = member.title | split: ' ' | last %}
 		{% for paper in site.categories.papers %}
 			{% if paper.authors contains lastname %}
