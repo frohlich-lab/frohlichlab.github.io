@@ -12,7 +12,7 @@ volume: 33
 issue: 7
 pages: "1049-1056"
 preprint: False
-code: 
+code: https://github.com/AMICI-dev/AMICI
 ---
 
 # Abstract

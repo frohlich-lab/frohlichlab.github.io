@@ -59,8 +59,8 @@ MAPPINGS = {
 CODE_LINKS = {
     '2016-01-25-kazeroonian-moment-generation': 'https://github.com/CERENADevelopers/CERENA',
     '2016-07-22-frohlich-moment-estimation': 'https://doi.org/10.1371/journal.pcbi.1005030.s002',
-    '2017-01-23-frohlich-adjoint-sensitivity': 'https://doi.org/10.1371/journal.pcbi.1005331.s002',
-    '2016-12-27-frohlich-event-sensitivity': '',
+    '2017-01-23-frohlich-adjoint-sensitivity': 'https://github.com/AMICI-dev/AMICI',
+    '2016-12-27-frohlich-event-sensitivity': 'https://github.com/AMICI-dev/AMICI',
     '2017-10-23-stapor-pesto-estimation': 'https://github.com/ICB-DCM/PESTO/',
     '2017-11-30-ligon-genssi-identifiability': 'https://github.com/genssi-developer/GenSSI',
     '2018-05-23-loos-hierarchical-heterogeneity': 'https://github.com/ICB-DCM/ODEMM',

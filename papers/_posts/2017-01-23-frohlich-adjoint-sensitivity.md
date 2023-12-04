@@ -12,7 +12,7 @@ volume: 13
 issue: 1
 pages: "1-18"
 preprint: False
-code: https://doi.org/10.1371/journal.pcbi.1005331.s002
+code: https://github.com/AMICI-dev/AMICI
 ---
 
 # Abstract

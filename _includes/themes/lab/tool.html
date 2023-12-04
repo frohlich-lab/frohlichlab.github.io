@@ -1,0 +1,41 @@
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-2">
+		<div class="media logobox">
+			{% if page.image %}
+			<img class="media-object toollogo" src="{{ page.image }}">
+			{% endif %}
+		</div>
+    <div class="pad-left note">
+      <div class="smallspacer"></div>
+      <i class="fa fa-github-alt fa-fw"></i>
+      <a class="off" href="https://github.com/{{ page.github }}">{{ page.github }}</a>
+    </div>
+	</div>
+
+  <div class="col-md-10">
+		<div class="media-body titlebox">
+			<div class="title media-heading">
+        {{ page.title }}
+      </div>
+      <div class="tagline">{{page.tagline}}</div>
+    </div>
+    <div class="bigspacer"></div>
+    <div class="post">
+      {{ content }}
+    </div>
+    <div class="bigspacer"></div>
+    <div class="head">Papers</div>
+    <div class="spacer"></div>
+    {% for paper in site.categories.papers %}
+      {% if paper.code contains page.github %}
+        {% if paper.embargo %}
+        <p>{{ paper.title }}
+        {% else %}
+        <p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %} 
+  </div>
+</div>
