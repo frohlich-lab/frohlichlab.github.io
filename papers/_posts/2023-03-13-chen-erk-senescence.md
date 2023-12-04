@@ -7,7 +7,7 @@ ref: "Chen et al. 2023. Cell Rep."
 journal: "Cell Reports"
 pdflink: https://www.cell.com/cell-reports/pdf/S2211-1247(23)00263-2.pdf
 pdf: 
-doi: https://doi.org/10.1016/j.celrep.2023.112252
+doi: 10.1016/j.celrep.2023.112252
 volume: 42
 issue: 3
 pages: "112252"
