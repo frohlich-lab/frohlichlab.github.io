@@ -19,10 +19,10 @@ navorder: 0
 
 {% for project in site.categories.research %}
   <div class="row">
-    <div class="col-md-5 logobox">
+    <div class="col-md-2 logobox">
     	<img class="ml-2" width="85%" class="media-object" src="{{ project.image }}">
     </div>
-    <div class="col-md-7 projectbox">
+    <div class="col-md-10 projectbox">
       <div class="media">
         <div class="media-body">
           <div class="head media-heading mb-1">{{ project.title }}</div>
@@ -37,3 +37,7 @@ navorder: 0
   </div>
   <div class="hugespacer"></div>
 {% endfor %}
+
+<div class="col-md-10">
+<p> Images generated with AI. <p>
+</div>
