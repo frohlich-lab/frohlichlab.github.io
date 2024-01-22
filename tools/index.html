@@ -11,28 +11,29 @@ navorder: 2
 
 {% for project in site.categories.tools %}
   <div class="row">
-    <div class="col-md-1 logobox">
+    <div class="col-md-2 logobox">
       <a href="{{ project.url }}">
         <img class="ml-2" width=75 class="media-object" src="{{ project.image }}">
       </a>
     </div>
     <div class="col-md-10 projectbox">
-      <div class="media">
-        <div class="media-body">
-          <div class="head media-heading mb-1"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
-          <p class="note">{{ project.tagline }}</p>
+      <div>
+        <div class="media">
+          <div class="media-body">
+            <div class="head media-heading mb-1"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
+            <div class="smallspacer"></div>
+            <p class="note">
+              <i class="fa fa-github-alt fa-fw"></i>
+              <a class="off" href="https://github.com/{{ project.github }}">{{ project.github }}</a>
+              &#8212;
+              {{ project.tagline }}
+            </p>
+          </div>
+        </div>
+        <div class="note">
+          {{ project.description }}
         </div>
       </div>
-      <div class="smallspacer"></div>
-      <div class="note">
-        {{ project.description }}
-      </div>
-      <div class="pad-left note">
-        <div class="smallspacer"></div>
-        <i class="fa fa-github-alt fa-fw"></i>
-        <a class="off" href="https://github.com/{{ project.github }}">{{ project.github }}</a>
-      </div>
-      <div class="spacer"></div>
     </div>
   </div>
   <div class="bigspacer"></div>

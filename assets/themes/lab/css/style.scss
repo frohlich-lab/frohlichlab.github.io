@@ -175,13 +175,22 @@ strong {
 }
 
 .logobox {
-	height: 180px;
+	height: 137px;
 	line-height: 65px;
 	font-weight: 300;
-	display: table-cell;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	vertical-align: middle;
 	text-align: center;
 	text-shadow: 1.5px 1.5px #ffffff;
+}
+
+.projectbox {
+	height: 137px;
+	margin: auto;
+	display: flex;
+	align-items: center;
 }
 
 // navbar
