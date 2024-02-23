@@ -80,6 +80,7 @@ CODE_LINKS = {
     '2023-01-26-frohlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
     '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
     '2023-11-23-schalte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
+    '2024-02-16-frohlich-msb-nv': ''
 }
 
 ACCENTS = {
