@@ -1,6 +1,6 @@
 ---
 layout: post
-title: We're Hiring (PostDoc, open)
+title: We're Hiring (PostDoc, closed)
 tags:
   - recruitment
 ---
