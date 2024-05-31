@@ -1,28 +1,27 @@
 import os
 import sys
 import pathlib
-import requests
 
 from string import Template
 from pathlib import Path
 
 try:
-    requests
-except ImportError:
-    print('requests not installed, please run `pip3 install requests` first')
+    import requests
+except ImportError as e:
+    print(f'requests not installed ("{e}"), please run `pip3 install requests` first')
     sys.exit()
 
 
 try:
     from pybtex.database.input import bibtex
-except ImportError:
-    print('pybtex not installed, please run `pip3 install pybtex` first')
+except ImportError as e:
+    print(f'pybtex/setuptools not installed ("{e}"), please run `pip3 install pybtex setuptools` first')
     sys.exit()
     
 try:
     from unidecode import unidecode
-except ImportError:
-    print('pybtex not installed, please run `pip3 install pybtex` first')
+except ImportError as e:
+    print(f'pybtex not installed ("{e}"), please run `pip3 install unidecode` first')
     sys.exit()
 
 # parse bibtex
@@ -80,7 +79,8 @@ CODE_LINKS = {
     '2023-01-26-frohlich-allosteric-rewiring': 'https://github.com/labsyspharm/marm2-supplement',
     '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
     '2023-11-23-schalte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
-    '2024-02-16-frohlich-msb-nv': ''
+    '2024-02-16-frohlich-msb-nv': '',
+    '2024-05-17-le marois-erk-pulses-sahai': 'https://github.com/alixlemarois/dynamic_signalling'
 }
 
 ACCENTS = {
