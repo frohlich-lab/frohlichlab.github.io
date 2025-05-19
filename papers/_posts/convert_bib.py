@@ -80,7 +80,11 @@ CODE_LINKS = {
     '2023-03-13-chen-erk-senescence': 'https://github.com/clemenshug/erk_senescence',
     '2023-11-23-schalte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
     '2024-02-16-frohlich-msb-nv': '',
-    '2024-05-17-le marois-erk-pulses-sahai': 'https://github.com/alixlemarois/dynamic_signalling'
+    '2024-05-17-le marois-erk-pulses-sahai': 'https://github.com/alixlemarois/dynamic_signalling',
+    '2025-05-04-persson-Persson-petab': 'https://github.com/sebapersson/PEtab.jl',
+    '2025-02-21-sauro-cure-sauro': '',
+    '2025-02-20-cortes-rios-Cortes-cell-cycle': 'https://www.synapse.org/#!Synapse:syn55267562/files/',
+
 }
 
 ACCENTS = {
@@ -103,6 +107,7 @@ ACCENTS = {
     r'\v{s}': r'š',
     r'\c{s}': r'ş',
     r'\ss': r'ß',
+    r'\'\i': r'í'
 }
 
 PAPER_PDF_PATH = '/pdfs/papers/'
