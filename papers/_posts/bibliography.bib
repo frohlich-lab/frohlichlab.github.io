@@ -1,3 +1,46 @@
+@article {Persson-petab,
+    author = {Persson, Sebastian and Fr{\"o}hlich, Fabian and Grein, Stephan and Loman, Torkel and Ognissanti, Damiano and Hasselgren, Viktor and Hasenauer, Jan and Cvijovic, Marija},
+    title = {PEtab.jl: Advancing the Efficiency and Utility of Dynamic Modelling},
+    elocation-id = {2025.04.30.651378},
+    year = {2025},
+    month = {05},
+    day = {04},
+    doi = {10.1101/2025.04.30.651378},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {Dynamic models are useful to study processes ranging from cell signalling to cell differentiation. Common modelling workflows such as model exploration and parameter estimation are computationally demanding. The Julia programming language is a promising tool to address these computational challenges. To evaluate it we developed SBMLImporter.jl and PEtab.jl, a package for model fitting. SBMLImporter.jl was used to evaluate different stochastic simulators against PySB and RoadRunner, overall Julia simulators proved fastest. For Ordinary Differential Equations (ODE) models solvers, gradient methods, and parameter estimation performance were evaluated using PEtab benchmark problems. For the latter two tasks PEtab.jl was compared against pyPESTO, which employs the high-performance AMICI library. Guidelines for choosing ODE solver were produced by evaluating 31 ODE solvers for 29 models. Further, by leveraging automatic differentiation PEtab.jl proved efficient and, for up to medium-sized models, was often at least twice faster than pyPESTO, showcasing how Julia's ecosystem can accelerate modelling workflows.},
+    URL = {https://www.biorxiv.org/content/early/2025/05/04/2025.04.30.651378},
+    eprint = {https://www.biorxiv.org/content/early/2025/05/04/2025.04.30.651378.full.pdf},
+    journal = {bioRxiv}
+}
+
+@article{cure-sauro,
+      title={From FAIR to CURE: Guidelines for Computational Models of Biological Systems}, 
+      author={Herbert M. Sauro and Eran Agmon and Michael L. Blinov and John H. Gennari and Joe Hellerstein and Adel Heydarabadipour and Peter Hunter and Bartholomew E. Jardine and Elebeoba May and David P. Nickerson and Lucian P. Smith and Gary D Bader and Frank Bergmann and Patrick M. Boyle and Andreas Drager and James R. Faeder and Song Feng and Juliana Freire and Fabian Frohlich and James A. Glazier and Thomas E. Gorochowski and Tomas Helikar and Stefan Hoops and Princess Imoukhuede and Sarah M. Keating and Matthias Konig and Reinhard Laubenbacher and Leslie M. Loew and Carlos F. Lopez and William W. Lytton and Andrew McCulloch and Pedro Mendes and Chris J. Myers and Jerry G. Myers and Lealem Mulugeta and Anna Niarakis and David D. van Niekerk and Brett G. Olivier and Alexander A. Patrie and Ellen M. Quardokus and Nicole Radde and Johann M. Rohwer and Sven Sahle and James C. Schaff and T. J. Sego and Janis Shin and Jacky L. Snoep and Rajanikanth Vadigepalli and H. Steve Wiley and Dagmar Waltemath and Ion Moraru},
+      year={2025},
+      month = {02},
+      day = {21},
+      abstract = {Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible.},
+      eprint={https://arxiv.org/pdf/2502.15597},
+      doi={https://doi.org/10.48550/arXiv.2502.15597},
+      url={https://arxiv.org/abs/2502.15597},
+      journal = {arXiv}
+}
+
+@article{Cortes-cell-cycle,
+    author = {Cort{\'e}s-R{\'\i}os, Javiera and Rodriguez-Fernandez, Maria and Sorger, Peter K. and Fr{\"o}hlich, Fabian},
+    title = {Dynamic Modeling of Cell Cycle Arrest Through Integrated Single-Cell and Mathematical Modelling Approaches},
+    year = {2025},
+    month = {02},
+    day = {20},
+    doi = {https://doi.org/10.1101/2025.02.20.639240},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {Highly multiplexed imaging assays allow simultaneous quantification of multiple protein and phosphorylation markers, providing a static snapshots of cell types and states. Pseudo-time techniques can transform these static snapshots of unsynchronized cells into dynamic trajectories, enabling the study of dynamic processes such as development trajectories and the cell cycle. Such ordering also enables training of mathematical models on these data, but technical challenges have hitherto made it difficult to integrate multiple experimental conditions, limiting the predictive power and insights these models can generate. In this work, we propose data processing and model training approaches for integrating multiplexed, multi-condition immunofluorescence data with mathematical modelling. We devise training strategies that are applicable to datasets where cells exhibit oscillatory as well as arrested dynamics and use them to train a cell cycle model on a dataset of MCF-10A mammary epithelial exposed to cell-cycle arresting small molecules. We validate the model by investigating predicted growth factor sensitivities and responses to inhibitors of cells at different initial conditions. We anticipate that our framework will generalise to other highly multiplexed measurement techniques such as mass-cytometry, rendering larger bodies of data accessible to dynamic modelling and paving the way to deeper biological insights.Author Summary Advanced imaging techniques allow us to see detailed pictures of different proteins and cell changes. By using computational algorithms, we turn these static pictures into dynamic sequences to understand processes like the cell cycle better. However, combining data from different experiments is difficult and limits how well our models can predict outcomes. This study introduces new ways to process data and train models to handle complex data from various conditions.The approach is tested by using data from untreated and treated cells to create a model of the cell cycle. This model was then checked for accuracy by seeing how well it could predict how cells respond to growth factors and drugs from different starting points. In the future, this method could be used with other data types, allowing for more detailed and accurate models of cellular behavior.},
+    URL = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639240},
+    eprint = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639240.full.pdf},
+    journal = {bioRxiv}
+}
+
+
 @article{erk-pulses-sahai
     author = {Le Marois, Alix and Bailey, Sasha and Hooper, Steven and Kumar, Sunil and Sparks, Hugh and Alexandrov, Yuriy and Caswell, Deborah and Fr{\"o}hlich, Fabian and Schlegelmilch, Karin and Valand, Karishma and Martin, Matthew and Narvaez, Ana and Swanton, Charles and Downward, Julian and Dunsby, Christopher and French, Paul and Sahai, Erik},
     title = {Imaging of MAP kinase dynamics reveals endocytic regulation of pulsatile signalling and network re-wiring in response to targeted therapy in EGFR-mutant non-small cell lung cancer},
