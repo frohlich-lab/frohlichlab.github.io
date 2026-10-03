@@ -38,7 +38,7 @@ and open http://127.0.0.1:4000. The site is rebuilt automatically whenever you s
 
 ## Overview of the structure
 
-A site is a collection of HTML pages. For our site (and many others), there are page types, like a paper page, or a lab member page, which are the same in design but different in content. In the web-accessible site, these are indeed different pages. However, they are _generated_ from a single template file filled in with information from many paper- or member-specific Markdown files. This generation is done every time the site changes by a GitHub Actions workflow.
+A site is a collection of HTML pages. For our site (and many others), there are page types, like a paper page, or a lab member page, which are the same in design but different in content. In the web-accessible site, these are indeed different pages. However, they are _generated_ from a single template file filled in with information from many member-specific Markdown files (or, for papers, BibTeX entries). This generation is done every time the site changes by a GitHub Actions workflow.
 
 - `_layouts/` – the page templates (`default` is the frame with navigation bar and footer; `paper`, `member`, `post`, `tool` and `project` are used by the respective Markdown files).
 - `_includes/` – reusable snippets and longer texts: `home.md` (home page text), `research.md` (research page intro), `post_list.html` (news/blog listing).
@@ -49,7 +49,7 @@ A site is a collection of HTML pages. For our site (and many others), there are 
 
 ## How to add content
 
-For most common actions---adding a lab member, paper, tool, or news item---you'll be making a new Markdown file in the proper `_posts` folder, naming it properly, and filling in the required fields. In almost all cases, you can (and should!) copy an existing item, change the name, and change its content, rather than trying to write a Markdown document from scratch.
+For most common actions---adding a lab member, tool, or news item---you'll be making a new Markdown file in the proper `_posts` folder, naming it properly, and filling in the required fields. In almost all cases, you can (and should!) copy an existing item, change the name, and change its content, rather than trying to write a Markdown document from scratch.
 
 For example, suppose you want to add a news item, which will appear on the front page, announcing that you have created a yeast strain capable of secreting high-quality chardonnay. Go into the `news/_posts` folder. Copy one of the existing items into a new file named with today's date (it matters!) and a brief title:
 
@@ -77,19 +77,18 @@ This new announcement won't yet be public. The section after next shows you how 
 
 The same basic process is used to add team members (`team/_posts`, `layout: member`), tools (`tools/_posts`, `layout: tool`), blog posts (`blog/_posts`) and research topics (`research/_posts`).
 
-## Adding publications
+## Adding a paper
 
-Paper pages in `papers/_posts` are generated from `papers/_posts/bibliography.bib` by `papers/_posts/convert_bib.py` (Python, needs `pybtex`, `setuptools`, `unidecode` and `requests`):
+There is no Markdown file per paper. The paper pages, the papers list, and the paper lists on the home, team and tool pages are all built from `papers/_posts/bibliography.bib` by `_plugins/papers.rb` every time the site is built.
 
-1. Add the BibTeX entry to `bibliography.bib` (with `year`, `month`, `day`, `journal`, `doi`, `abstract`; for preprints also `eprint` with the PDF link).
-2. Add the new paper to `CODE_LINKS` in the script (`''` if there is no code), and to `J_ABBREV` if the journal is new.
-3. Run the script from that folder; it deletes all `.md` files there and regenerates them from `post.md.template`:
+1. Add a BibTeX entry to `papers/_posts/bibliography.bib` (an export from the journal or bioRxiv is a good start). It needs `author`, `title`, `journal`, `year`, `month` and `day` (numbers, used for ordering), `doi` and `abstract`. `volume`, `number` and `pages` are shown if present.
+2. Add `eprint = {...}` with a link to the full-text PDF and, if there is code, `code = {https://github.com/...}`.
+3. Optionally, put the PDF at `assets/pdfs/papers/<bibkey>.pdf`; it is then linked instead of `eprint`.
+4. To abbreviate the journal name in the papers list, add it to `_data/journals.yml`. Entries whose journal is one of the preprint servers listed there (bioRxiv, arXiv, medRxiv) are marked as preprints.
 
-   ```
-   cd papers/_posts
-   pip3 install pybtex setuptools unidecode requests
-   python3 convert_bib.py
-   ```
+The page URL is `/papers/<first author last name>-<bibkey>`, for example `/papers/persson-petab-sciml`. When a preprint is published, update its entry but keep the key, so the URL stays the same. LaTeX accents such as `Fr{\"o}hlich` are converted; plain Unicode works too. Team pages list every paper whose author list contains the member's last name.
+
+Check the result with `bundle exec jekyll serve`; a missing required field stops the build with an error naming the entry.
 
 ## Updating the public site
 

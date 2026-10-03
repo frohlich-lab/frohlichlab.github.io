@@ -43,3 +43,8 @@ author :
   email : fabian.frohlich@crick.ac.uk
   github : ffroehlich
   twitter : froehlichfab
+
+# Papers are generated from this BibTeX file by _plugins/papers.rb
+papers:
+  bibliography: papers/_posts/bibliography.bib
+  pdf_dir: assets/pdfs/papers

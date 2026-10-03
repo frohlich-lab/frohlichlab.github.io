@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.4'
 
+# Parses papers/_posts/bibliography.bib for the paper generator in _plugins/papers.rb
+gem 'bibtex-ruby', '~> 6.1'
+
 # Plugins enabled under `plugins:` in _config.yml
 gem 'jekyll-redirect-from', '~> 0.16'
 gem 'jekyll-sitemap', '~> 1.4'
