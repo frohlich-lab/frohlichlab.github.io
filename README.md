@@ -53,9 +53,9 @@ For most common actions---adding a lab member, paper, tool, or news item---you'l
 
 For example, suppose you want to add a news item, which will appear on the front page, announcing that you have created a yeast strain capable of secreting high-quality chardonnay. Go into the `news/_posts` folder. Copy one of the existing items into a new file named with today's date (it matters!) and a brief title:
 
-	cp 2022-11-09-postdoc-hiring.md 2023-01-31-wine-yeast.md
+	cp 2022-11-09-postdoc-hiring-2022-11.md 2023-01-31-wine-yeast.md
 
-The date in the file name is the post's date; the rest becomes its URL (here `/news/wine-yeast`), so pick a title that hasn't been used before in that folder. Now edit the new file to make the content what you want. By the time you're done, hopefully you have something like this:
+The date in the file name is the post's date; the rest becomes its URL (here `/news/wine-yeast`), so pick a title that hasn't been used before in that folder (otherwise one post silently replaces the other on the site). Now edit the new file to make the content what you want. By the time you're done, hopefully you have something like this:
 
 	---
 	layout: post
@@ -64,6 +64,8 @@ The date in the file name is the post's date; the rest becomes its URL (here `/n
 	  - publication
 	---
 	Today we are thrilled to announce a new strain of yeast that secretes beautifully oaked chardonnay. See more details in our [preprint](http://biorxiv.org/content/10.1101/0000000)!
+
+Posts that recur, like hiring ads, need the year and month in the title as well, e.g. `2026-02-02-phd-hiring-2026-02.md` (URL `/news/phd-hiring-2026-02`). The newest PhD and postdoc ads also carry `redirect_from: /news/phd-hiring` (or `/news/postdoc-hiring`), so those short links always lead to the latest ad: move that line from the previous ad to the new one. To check that no two files share a URL, run `bundle exec jekyll doctor`; GitHub runs it on every pull request and push, and the build fails if it finds a conflict.
 
 Now add it to the repository, commit and push your branch:
 

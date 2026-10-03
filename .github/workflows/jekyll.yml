@@ -36,6 +36,13 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
+      - name: Check that no two files share a URL
+        # Fails if e.g. two posts in a _posts folder have the same title after
+        # the date, or two posts have the same redirect_from (reported as
+        # "redirect.html"), which would make one silently overwrite the other.
+        run: bundle exec jekyll doctor
+        env:
+          JEKYLL_ENV: production
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
