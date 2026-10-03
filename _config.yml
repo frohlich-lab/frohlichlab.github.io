@@ -15,9 +15,6 @@ kramdown:
   gfm_quirks: paragraph_end
   math_engine: mathjax
   syntax_highlighter: rouge
-sass:
-  style: compressed
-  sourcemap: never
 
 plugins:
   - jekyll-redirect-from
