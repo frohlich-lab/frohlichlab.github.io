@@ -6,12 +6,18 @@ permalink: /:categories/:title
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor", "node_modules", "venv"]
 highlighter: rouge
 
+# Match the settings the github-pages gem used to apply
+future: true
 markdown: kramdown
-
-# The github-pages gem applies the jekyll-theme-primer theme by default; the
-# site uses its own layouts, so switch it off (it only added an unused
-# /assets/css/style.css).
-theme: null
+kramdown:
+  input: GFM
+  hard_wrap: false
+  gfm_quirks: paragraph_end
+  math_engine: mathjax
+  syntax_highlighter: rouge
+sass:
+  style: compressed
+  sourcemap: never
 
 plugins:
   - jekyll-redirect-from
@@ -23,8 +29,7 @@ redirect_from:
 
 repository: frohlich-lab/frohlichlab.github.io
 
-# Used for absolute URLs (feed, sitemap). baseurl must be set explicitly, or
-# jekyll-github-metadata guesses one from the GitHub API.
+# Used for absolute URLs (feed, sitemap).
 url: https://www.frohlichlab.com
 baseurl: ""
 

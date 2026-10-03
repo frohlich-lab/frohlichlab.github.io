@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
-#gem 'jekyll-sass-converter'
 
-# Avoid polling for changes
-#gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'jekyll', '~> 4.4'
 
-gem "webrick", "~> 1.8"
+# Plugins enabled under `plugins:` in _config.yml
+gem 'jekyll-redirect-from', '~> 0.16'
+gem 'jekyll-sitemap', '~> 1.4'
+
+# Markdown dialect and local `jekyll serve`; both are Jekyll 4 dependencies, listed for clarity
+gem 'kramdown-parser-gfm', '~> 1.1'
+gem 'webrick', '~> 1.8'
