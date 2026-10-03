@@ -3,7 +3,7 @@
 # For more see: https://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:title
 
-exclude: ["README.md", "Rakefile", "Gemfile", "Gemfile.lock", "vendor", "node_modules", "venv"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor", "node_modules", "venv"]
 highlighter: rouge
 
 markdown: kramdown
