@@ -1,6 +1,6 @@
 # The Fröhlich Lab main website
 
-Our website, https://www.frohlichlab.com, is a [GitHub Pages](https://pages.github.com/) site built with [Jekyll](https://jekyllrb.com/) and [Bootstrap](https://getbootstrap.com), originally pulled from [Trevor Bedford's site](http://bedford.io) and the [Drummond Lab site](http://drummondlab.org).
+Our website, https://www.frohlichlab.com, is a [GitHub Pages](https://pages.github.com/) site built with [Jekyll](https://jekyllrb.com/) and a small hand-written stylesheet, originally pulled from [Trevor Bedford's site](http://bedford.io) and the [Drummond Lab site](http://drummondlab.org).
 
 # Editing the site
 
@@ -41,10 +41,10 @@ and open http://127.0.0.1:4000. The site is rebuilt automatically whenever you s
 A site is a collection of HTML pages. For our site (and many others), there are page types, like a paper page, or a lab member page, which are the same in design but different in content. In the web-accessible site, these are indeed different pages. However, they are _generated_ from a single template file filled in with information from many member-specific Markdown files (or, for papers, BibTeX entries). This generation is done every time the site changes by a GitHub Actions workflow.
 
 - `_layouts/` – the page templates (`default` is the frame with navigation bar and footer; `paper`, `member`, `post`, `tool` and `project` are used by the respective Markdown files).
-- `_includes/` – reusable snippets and longer texts: `home.md` (home page text), `research.md` (research page intro), `post_list.html` (news/blog listing).
+- `_includes/` – reusable snippets and longer texts: `home.md` (home page text), `research.md` (research page intro), `post_list.html` (news/blog listing), `icon.html` (inline SVG icons).
 - `about.md`, `join.md` – the About and Join pages.
 - `<section>/index.html` – the overview pages (`research`, `papers`, `tools`, `team`, `news`, `blog`); the items they list live in `<section>/_posts/`.
-- `assets/` – images, PDFs, stylesheets (`assets/themes/lab/css/style.scss`) and the Bootstrap files.
+- `assets/` – images, PDFs and the stylesheet (`assets/themes/lab/css/style.css`).
 - `_design/` – Illustrator sources for the logo and artwork (not published).
 
 ## How to add content
@@ -98,7 +98,7 @@ Then create a [pull request](https://github.com/frohlich-lab/frohlichlab.github.
 
 ## Changing look and feel
 
-Fonts, colors, spacing, and similar stylings are separate from the templates. Like most sites, we use Cascading Style Sheets (CSS), written as [Sass](https://sass-lang.com) in `assets/themes/lab/css/style.scss` on top of Bootstrap 3.
+Fonts, colors, spacing, and similar stylings are separate from the templates. Like most sites, we use Cascading Style Sheets (CSS): a single plain-CSS file, `assets/themes/lab/css/style.css`, with no framework and no build step. Colours and the font are CSS custom properties at the top of the file; layout uses CSS grid and flexbox with the same breakpoints Bootstrap had (768/992/1200 px). Icons are inline SVGs: `{% include icon.html name="github" %}` (see `_includes/icon.html` for the available names).
 
 ### To-dos
 
