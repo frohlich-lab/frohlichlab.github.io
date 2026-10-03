@@ -1,7 +1,32 @@
 ---
-theme :
-  name : lab
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/lab/project.html %}
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-2">
+		<div class="media logobox">
+			{% if page.image %}
+			<img class="media-object toollogo" src="{{ page.image }}">
+			{% endif %}
+		</div>
+    <div class="pad-left note">
+      <div class="smallspacer"></div>
+      <i class="fa fa-github-alt fa-fw"></i>
+      <a class="off" href="https://github.com/{{ page.github }}">{{ page.github }}</a>
+    </div>
+	</div>
+
+  <div class="col-md-10">
+		<div class="media-body titlebox">
+			<div class="title media-heading">
+        {{ page.title }}
+      </div>
+      <div class="tagline">{{page.tagline}}</div>
+    </div>
+    <div class="bigspacer"></div>
+    <div class="post">
+      {{ content }}
+    </div>
+  </div>
+</div>
