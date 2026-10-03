@@ -1,6 +1,6 @@
 ---
 layout: post
-title: We're hiring (PhD, open)
+title: We're hiring (PhD, closed)
 tags:
   - recruitment
 ---
