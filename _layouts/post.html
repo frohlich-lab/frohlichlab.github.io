@@ -12,29 +12,24 @@ layout: default
 {% endfor %}
 
 
-<div class="row post-full">
-  <div class="col-md-2">
+<div class="split split-narrow">
+  <div class="note">
     <div class="bigspacer"></div>
-    <div class="glyphbox note"> <!-- DAD: what is this--> 
-        <div class="smallhead">
-          {{ page.date | date_to_string }}
-          {% if author %}
-          <div class="bigspacer"></div>
-          by <a class="off" href="{{ author.url }}">{{ author.nickname }}</a>
-          {% endif %}           
-        </div>
-        <div class="bigspacer"></div>
+    <div class="smallhead">
+      {{ page.date | date_to_string }}
+      {% if author %}
+      <div class="bigspacer"></div>
+      by <a class="off" href="{{ author.url }}">{{ author.nickname }}</a>
+      {% endif %}
+    </div>
+    <div class="bigspacer"></div>
+  </div>
+  <div class="note">
+    <div class="bigspacer"></div>
+    <div class="content">
+      {{ content }}
     </div>
   </div>
-  <div class="col-md-10">
-    <div class="bigspacer"></div>
-    <div class="glyphbox note"> <!-- DAD: what is this--> 
-      <div class="content">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-
-    <hr>
-
 </div>
+
+<hr>

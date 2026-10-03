@@ -9,59 +9,38 @@ navorder: 3
 <div class="bigspacer"></div>
 
 {% assign current_team = site.categories.team | where: "alum","false"%}
-{% assign memberindex = 0 %}
+<div class="columns-3 team-grid">
 {% for member in current_team reversed %}
-	{% assign memberindex = memberindex | plus: 1 %}
-	{% assign colindex = memberindex | modulo: 3 %}
-	{% if colindex == 1 %} <!-- opening of a new row -->
-	<div class="row">
-	{% endif %}
-	<div class="col-md-4 memberbox">
-		<div class="media">
-				<a class="pull-left" href="{{ member.url }}">
-				<img class="media-object member-photo" src="{{ member.image }}">
-				</a>
-			 	<div class="media-body">
-				<div class="head media-heading member-name"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
-				<p class="note">{{ member.position }}</p>
-				</div>
+	<div class="member-card">
+		<a href="{{ member.url }}">
+			<img class="member-photo" src="{{ member.image }}" alt="{{ member.title }}">
+		</a>
+		<div>
+			<h2 class="head item-heading"><a href="{{ member.url }}" class="off">{{ member.title }}</a></h2>
+			<p class="note">{{ member.position }}</p>
 		</div>
-    </div>
-	{% if colindex == 0 %} <!-- closing a row -->
-	</div><div class="bigspacer"></div>
-	{% endif %}
+	</div>
 {% endfor %}
-{% if colindex != 0 %} <!-- close last open row -->
-</div><div class="bigspacer"></div>
-{% endif %}
+</div>
+<div class="bigspacer"></div>
 
 <div class="bigspacer"></div>
 <hr/>
 
 <div class="bigspacer"></div>
 <hr/>
-<div class="title text-center">Alumni</div>
+<h2 class="title alumni-title">Alumni</h2>
 <div class="bigspacer"></div>
 
 {% assign alumni = site.categories.team | where: "alum","true"%}
-{% assign memberindex = 0 %}
+<div class="columns-3 team-grid">
 {% for member in alumni %}
-	{% assign memberindex = memberindex | plus: 1 %}
-	{% assign colindex = memberindex | modulo: 3 %}
-	{% if colindex == 1 %} <!-- opening of a new row -->
-	<div class="row">
-	{% endif %}
-	<div class="col-md-4 memberbox">
-			 	<div class="media-body">
-				<div class="head media-heading member-name"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
-				<p class="note">{{ member.position }} <br> Last seen: {{ member.last_seen }}</p>
-				</div>
-    </div>
-	{% if colindex == 0 %} <!-- closing a row -->
-	</div><div class="bigspacer"></div>
-	{% endif %}
+	<div class="member-card">
+		<div>
+			<h2 class="head item-heading"><a href="{{ member.url }}" class="off">{{ member.title }}</a></h2>
+			<p class="note">{{ member.position }} <br> Last seen: {{ member.last_seen }}</p>
+		</div>
+	</div>
 {% endfor %}
-
-{% if colindex != 0 %} <!-- close last open row -->
-</div><div class="bigspacer"></div>
-{% endif %}
+</div>
+<div class="bigspacer"></div>

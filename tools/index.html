@@ -9,28 +9,24 @@ navorder: 2
 <div class="bigspacer"></div>
 
 {% for project in site.categories.tools %}
-  <div class="row">
-    <div class="col-md-2 logobox">
+  <div class="split split-narrow">
+    <div class="logobox">
       {% if project.image %}
       <a href="{{ project.url }}">
-        <img class="ml-2" width=75 class="media-object" src="{{ project.image }}">
+        <img width="75" src="{{ project.image }}" alt="{{ project.title }}">
       </a>
       {% endif %}
     </div>
-    <div class="col-md-10 projectbox">
+    <div class="projectbox">
       <div>
-        <div class="media">
-          <div class="media-body">
-            <div class="head media-heading mb-1"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
-            <div class="smallspacer"></div>
-            <p class="note">
-              <i class="fa fa-github-alt fa-fw"></i>
-              <a class="off" href="https://github.com/{{ project.github }}">{{ project.github }}</a>
-              &#8212;
-              {{ project.tagline }}
-            </p>
-          </div>
-        </div>
+        <h2 class="head item-heading"><a href="{{ project.url }}" class="off">{{ project.title }}</a></h2>
+        <div class="smallspacer"></div>
+        <p class="note">
+          {% include icon.html name="github" %}
+          <a class="off" href="https://github.com/{{ project.github }}">{{ project.github }}</a>
+          &#8212;
+          {{ project.tagline }}
+        </p>
         <div class="note">
           {{ project.description }}
         </div>
