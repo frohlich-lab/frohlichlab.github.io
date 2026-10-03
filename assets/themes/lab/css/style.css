@@ -490,7 +490,6 @@ a.off {
 	align-items: center;
 	justify-content: center;
 	height: 137px;
-	overflow: hidden;
 }
 
 .projectbox {
@@ -499,9 +498,12 @@ a.off {
 	height: 137px;
 }
 
+/* Fit inside the 137px box (Bootstrap's .media used to crop larger logos). */
 .toollogo {
-	width: 180px;
+	width: auto;
+	max-width: 100%;
 	height: auto;
+	max-height: 100%;
 	padding: 5px;
 }
 
