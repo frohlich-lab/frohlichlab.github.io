@@ -5,15 +5,9 @@ description: "Research Interests"
 group: navigation
 navorder: 0
 ---
-{% include JB/setup %}
 
-{% for page in site.categories.misc %}
-{% if page.research %}
-	{% assign researchpage = page %}
-{% endif %}
-{% endfor %}
-
-{{ researchpage.content }}
+{% capture research_text %}{% include research.md %}{% endcapture %}
+{{ research_text | markdownify }}
 
 <div class="hugespacer"></div>
 

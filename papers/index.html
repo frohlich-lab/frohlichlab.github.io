@@ -5,7 +5,6 @@ description: "Papers of the lab"
 group: navigation
 navorder: 1
 ---
-{% include JB/setup %}
 
 <div class="bigspacer"></div>
 
@@ -53,9 +52,11 @@ navorder: 1
         <div class="smallhead mb-1"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
         <p class="note">{{ paper.ref }}</p>
       </div>
+      {% if paper.image %}
       <a href="{{ paper.url }}">
         <img class="ml-3" width=100 class="media-object" src="{{ paper.image }}">
       </a>
+      {% endif %}
     </div>
     <div class="bigspacer"></div>
     <div class="spacer"></div>

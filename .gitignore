@@ -1,7 +1,9 @@
 _site/*
-_theme_packages/*
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
 
-Gemfile.lock
 Thumbs.db
 .DS_Store
 

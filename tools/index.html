@@ -5,16 +5,17 @@ description: "Tools developed in the lab"
 group: navigation
 navorder: 2
 ---
-{% include JB/setup %}
 
 <div class="bigspacer"></div>
 
 {% for project in site.categories.tools %}
   <div class="row">
     <div class="col-md-2 logobox">
+      {% if project.image %}
       <a href="{{ project.url }}">
         <img class="ml-2" width=75 class="media-object" src="{{ project.image }}">
       </a>
+      {% endif %}
     </div>
     <div class="col-md-10 projectbox">
       <div>

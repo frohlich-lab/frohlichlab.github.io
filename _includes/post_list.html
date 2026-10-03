@@ -1,0 +1,49 @@
+{% comment %}
+  Full-text list of posts, shared by /news/ and /blog/.
+  Parameters:
+    posts       - the posts to list, e.g. site.categories.news
+    link_titles - link each title to the post's own page
+{% endcomment %}
+<div class="bigspacer"></div>
+
+{% for post in include.posts %}
+
+	{% assign author = nil %}
+	{% for member in site.categories.team %}
+		{% if member.handle == post.author_handle %}
+			{% assign author = member %}
+		{% endif %}
+	{% endfor %}
+
+	<div class="bigspacer"></div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="head">
+				{% if include.link_titles %}
+				<a href="{{ post.url }}" class="off">{{ post.title }}</a>
+				{% else %}
+				{{ post.title }}
+				{% endif %}
+			</div>
+			<div class="smallnote">
+				{{ post.date | date_to_string }}
+				{% if author %}
+				by <a class="off" href="{{ author.url }}">{{ author.nickname }}</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div style="height:5px;"></div>
+			{% if post.image %}
+			<a href="{{ post.url }}"><img class="offset" src="{{ post.image }}"></a>
+			{% endif %}
+			<div class="post">
+				{{ post.content }}
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+{% endfor %}
+
+<div class="bigspacer"></div>
