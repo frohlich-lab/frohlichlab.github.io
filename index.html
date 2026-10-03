@@ -1,33 +1,29 @@
 ---
 layout: default
 title: Fröhlich Lab
-categories:
- - home
+heading: Dynamics of Living Systems Lab
+banner: /assets/images/team/lab.jpg
 ---
-{% for page in site.categories.misc %}
-{% if page.homepage %}
-	{% assign homepage = page %}
-{% endif %}
-{% endfor %}
 
 <div class="row">
 	<div class="col-md-12" style="margin-top: 1vh;">
 		<div class="logotitle logobox">
-			{{ homepage.title }}
+			{{ page.heading }}
 		</div>
 	</div>
 </div>
 
 <div class="row">
   <div class="col-md-12 text-center" style="margin-top: 1vh; margin-bottom: 1vh;">
-		<img src="{{ homepage.banner }}" class="img-fluid" style="max-width: 70%; border: 1px solid black;" alt="">
+		<img src="{{ page.banner }}" class="img-fluid" style="max-width: 70%; border: 1px solid black;" alt="">
   </div>
 </div>
 
 <div class="row">
 	<div class="col-md-12">
 		<div class="smallhead">
-			{{ homepage.content }}
+			{% capture home_text %}{% include home.md %}{% endcapture %}
+			{{ home_text | markdownify }}
 		</div>
 	</div>
 </div>

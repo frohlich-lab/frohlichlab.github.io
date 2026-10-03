@@ -1,10 +1,3 @@
----
-layout: default
-title: Dynamics of Living Systems Lab
-categories: home
-homepage: true
-banner: ./assets/images/team/lab.jpg
----
 At the [Francis Crick Institute](https://www.crick.ac.uk), our lab studies how cells respond to perturbations by combining quantitative experiments with scientific machine learning (SciML) to discover fundamental principles of cellular function and self-organisation.
 
 In the dry lab, we integrate mechanistic differential equation models, which embed domain knowledge, with machine learning techniques such as representation learning and neural network-based regression to enable data-driven discovery in biology. In the wet lab, we pair lab automation with multiplexed antibody assays to quantify single-cell responses to perturbations at scale. We integrate wet and dry approaches to investigate how protein dynamics–the signals they transduce and the cell states they define–are regulated across spatial scales, from the biophysics of individual proteins to cell–cell interactions, within diverse cellular processes, including developmental and mitogenic pathways.

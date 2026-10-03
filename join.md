@@ -1,8 +1,6 @@
 ---
-layout: post
-join: true
-category: misc
-tags: []
+layout: default
+title: Join
 ---
 # Joining the Lab
 

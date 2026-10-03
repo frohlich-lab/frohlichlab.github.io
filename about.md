@@ -1,8 +1,6 @@
 ---
-layout: post
-about: true
-category: misc
-tags: []
+layout: default
+title: Fröhlich Lab / About
 ---
 # Contact
 
