@@ -11,10 +11,10 @@
 	--font: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--fg: #000;
 	--bg: #fff;
-	--link: #428bca;
-	--link-hover: #2a6496;
-	--subtle: #95a5a6;
-	--bar-fg: #777;
+	--link: #337ab7;        /* was #428bca (3.6:1); darkened to pass WCAG AA (4.6:1) */
+	--link-hover: #23527c;
+	--subtle: #687a7c;      /* was #95a5a6 (2.6:1); darkened to pass WCAG AA (4.5:1) */
+	--bar-fg: #727272;      /* header/footer links; was #777 (4.2:1 on the bar) */
 	--bar-fg-hover: #333;
 	--bar-border: #e7e7e7;
 	--rule: #eee;
@@ -311,7 +311,7 @@ hr {
 	width: 22px;
 	height: 2px;
 	border-radius: 1px;
-	background-color: #ccc;
+	background-color: #888;
 }
 
 .nav-toggle__bar + .nav-toggle__bar { margin-top: 4px; }
