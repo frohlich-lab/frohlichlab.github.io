@@ -262,6 +262,10 @@ hr {
 	text-decoration: none;
 }
 
+/* Inset focus ring, so the scrollable mobile menu does not clip it. */
+.bar-links a:focus-visible,
+.site-brand:focus-visible { outline-offset: -2px; }
+
 .site-logo img {
 	display: block;
 	width: 50px;
