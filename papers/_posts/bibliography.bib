@@ -1,45 +1,160 @@
-@article {Persson-petab,
-    author = {Persson, Sebastian and Fr{\"o}hlich, Fabian and Grein, Stephan and Loman, Torkel and Ognissanti, Damiano and Hasselgren, Viktor and Hasenauer, Jan and Cvijovic, Marija},
-    title = {PEtab.jl: Advancing the Efficiency and Utility of Dynamic Modelling},
-    elocation-id = {2025.04.30.651378},
-    year = {2025},
-    month = {05},
-    day = {04},
-    doi = {10.1101/2025.04.30.651378},
+@article{gemot,
+    author = {de Pomereu, Theodore and Snelling, Branwen and Fr{\"o}hlich, Fabian},
+    title = {GEMOT: Towards Mechanistic World Models for Biology},
+    year = {2026},
+    month = {09},
+    day = {28},
+    doi = {10.64898/2026.09.26.754619},
     publisher = {Cold Spring Harbor Laboratory},
-    abstract = {Dynamic models are useful to study processes ranging from cell signalling to cell differentiation. Common modelling workflows such as model exploration and parameter estimation are computationally demanding. The Julia programming language is a promising tool to address these computational challenges. To evaluate it we developed SBMLImporter.jl and PEtab.jl, a package for model fitting. SBMLImporter.jl was used to evaluate different stochastic simulators against PySB and RoadRunner, overall Julia simulators proved fastest. For Ordinary Differential Equations (ODE) models solvers, gradient methods, and parameter estimation performance were evaluated using PEtab benchmark problems. For the latter two tasks PEtab.jl was compared against pyPESTO, which employs the high-performance AMICI library. Guidelines for choosing ODE solver were produced by evaluating 31 ODE solvers for 29 models. Further, by leveraging automatic differentiation PEtab.jl proved efficient and, for up to medium-sized models, was often at least twice faster than pyPESTO, showcasing how Julia's ecosystem can accelerate modelling workflows.},
-    URL = {https://www.biorxiv.org/content/early/2025/05/04/2025.04.30.651378},
-    eprint = {https://www.biorxiv.org/content/early/2025/05/04/2025.04.30.651378.full.pdf},
+    abstract = {Scientific discovery seeks mechanisms that explain observations and predict beyond the measurements that produced them. Whereas large language models (LLMs) encode knowledge implicitly, mechanistic world models organise it as a parsimonious set of explicit, modular, reusable mechanisms whose predictions can be scored against data. In biology, where measurements are sparse and noisy, mechanistic world modelling must discover latent states and governing equations jointly, yet the prior knowledge that could constrain this search is largely unstructured. We introduce gemot, an agentic framework for mechanistic world modelling, and evaluate it on 18 published biological problems spanning molecular biology, epidemiology, and immune-cell differentiation, with up to 1,755 training measurements, 65 observables, 170 experimental conditions, and 3 data modalities per problem. gemot is auditable by construction: a semantic layer records each hypothesis, and a Model Context Protocol layer separates hypothesis formulation from numerical evaluation, so hypothesis scoring cannot be fabricated. On every problem, autonomously constructed models match or exceed the reference models in fit and parsimony, and generalise where held-outs exist. We demonstrate that gemot can formulate novel, biologically plausible mechanistic hypotheses. This work will enable decoding of interventional biological data into competing mechanistic hypotheses and design experiments that distinguish between them, and may serve as a blueprint for mechanistic world modelling in other domains.},
+    URL = {https://www.biorxiv.org/content/10.64898/2026.09.26.754619v1},
+    eprint = {https://www.biorxiv.org/content/10.64898/2026.09.26.754619v1.full.pdf},
     journal = {bioRxiv}
 }
 
+@article{symbolic-regression,
+    author = {de Pomereu, Theodore and Fr{\"o}hlich, Fabian},
+    title = {Symbolic regression enables coarse-grained model discovery of intracellular signalling dynamics},
+    year = {2026},
+    month = {08},
+    day = {21},
+    doi = {10.64898/2026.08.20.745973},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {Cells respond to their environment through protein networks often dysregulated in cancer, making dynamical modelling crucial. Limitations in experimental data and computational resources motivate coarse-graining methods to build low-dimensional descriptions. Yet classical approaches to coarse-grained modelling rely on strong assumptions, leaving it unclear when partial experimental observations support reduced descriptions of system dynamics. Here we show that symbolic regression (SR) provides a data-driven way to test whether, and how compactly, the dynamics of a signalling system coarse-grain over the measured variables, and, when they do, infers mechanistically interpretable models. In synthetic enzyme systems, SR recovers Michaelis-Menten kinetics for the two-step mechanism and under three-step extensions. As data quality is degraded, SR simplifies toward effective kinetic laws while preserving correct theoretical limits. Applied to published time-resolved ERK phosphorylation data, SR identifies compact phospho-ERK rate laws in selected cancer-relevant gene overexpression contexts, yielding interpretable kinetic effects. A sparse neural ODE baseline requires few inputs where SR succeeds, but on average more where it fails, indicating that, where a reduced model is learnable at all, SR failure is associated with more complex dynamics that a simple mathematical model cannot describe. Together, these findings establish symbolic regression as a way to test when a compact coarse-grained description is warranted, generating hypotheses where one holds and motivating potential new measurements where it does not.},
+    URL = {https://www.biorxiv.org/content/10.64898/2026.08.20.745973v1},
+    eprint = {https://www.biorxiv.org/content/10.64898/2026.08.20.745973v1.full.pdf},
+    journal = {bioRxiv}
+}
+
+@article{petab-sciml,
+    author = {Persson, Sebastian and Snelling, Branwen and Philipps, Maren and Weindl, Daniel and Cvijovic, Marija and Hasenauer, Jan and Pathirana, Dilan and Fr{\"o}hlich, Fabian},
+    title = {PEtab SciML: an exchange format for specifying and training dynamic scientific machine learning models},
+    year = {2026},
+    month = {08},
+    day = {20},
+    doi = {10.48550/arXiv.2608.20184},
+    abstract = {Dynamic scientific machine learning (SciML) models that combine mechanistic ordinary differential equations (ODEs) with machine learning (ML) components have applications ranging from learning unknown biological processes to integrating auxiliary data modalities into dynamic modelling. To enable reproducible and efficient SciML training, we introduce PEtab SciML, an interoperable data format for specifying parameter estimation problems in which mechanistic and ML model parameters are jointly estimated from time series data. PEtab SciML supports several ML ODE hybridization patterns in realistic problem setups. It is accompanied by a reference Python library and downstream modelling support in Python/JAX and Julia, provided by AMICI and PEtab.jl, respectively, and a collection of real data benchmarks. PEtab SciML is available on GitHub (https://github.com/PEtab-dev/petab_sciml). The reference Python package is installable from PyPI and is continuously tested and supported on Linux, macOS, and Windows.},
+    URL = {https://arxiv.org/abs/2608.20184},
+    eprint = {https://arxiv.org/pdf/2608.20184},
+    journal = {arXiv}
+}
+
+@article{petab-v2,
+    author = {Pathirana, Dilan and Fr{\"o}hlich, Fabian and Persson, Sebastian and Bergmann, Frank T. and K{\"o}nig, Matthias and Lang, Paul F. and Bang, Severin and Kemmer, Svenja and Hasenauer, Jan and Weindl, Daniel},
+    title = {The parameter estimation tables (PEtab) format version 2},
+    journal = {Journal of Integrative Bioinformatics},
+    pages = {20260004},
+    year = {2026},
+    month = {08},
+    day = {13},
+    doi = {10.1515/jib-2026-0004},
+    abstract = {Parameter estimation is a central task in data-driven computational modeling, and a clear, unambiguous, and commonly understood specification of parameter estimation problems is essential for reproducibility and interoperability. PEtab provides a standardized framework for defining such problems in systems biology and systems medicine, particularly for ordinary differential equation models. This document describes the second version of the PEtab format, PEtab 2.0. PEtab 2.0 simplifies and clarifies how estimation problems are defined, while also extending the standard to support more complex and realistic experimental setups. Key improvements include support for additional model formats beyond SBML, expanded and improved specification of parameter priors for Bayesian parameter estimation, and a more flexible description of experiments that allows multiple conditions, time periods, and pre-equilibration steps within a single simulation. Additional updates refine the definition of model parameters, measurement noise, and observation models, and remove ambiguous or confusing features from earlier versions. Version 2 also includes a general extension mechanism, to add functionality for specialized applications not covered by the core standard.},
+    url = {https://doi.org/10.1515/jib-2026-0004},
+    eprint = {https://www.degruyterbrill.com/document/doi/10.1515/jib-2026-0004/pdf}
+}
+
+@article{curriculum-shooting,
+    author = {Persson, Sebastian and Fabrini, Giacomo and Snelling, Branwen and Fr{\"o}hlich, Fabian},
+    title = {Curriculum Multiple Shooting for Robust Training of Neural and Universal Differential Equations},
+    year = {2026},
+    month = {08},
+    day = {06},
+    doi = {10.48550/arXiv.2608.05777},
+    abstract = {Neural ordinary differential equations (NODEs) and universal differential equations (UDEs) provide flexible and popular frameworks for learning interpretable dynamical systems from noisy time-series data. However, training these models remains challenging, and versatile methods that robustly handle sparse and noisy data as well as partially observed models are lacking. To address this, we introduce curriculum multiple shooting (CMS), a general-purpose training strategy for fitting ordinary differential equation (ODE) models to time-series data by integrating curriculum learning with multiple shooting. Across twelve benchmarks spanning simulated and real data, and covering NODEs, UDEs, and mechanistic ODEs, CMS accelerates and stabilises training convergence, outperforms state-of-the-art training strategies, and ranks among the best methods in generalisation. Finally, we discuss possible explanations for the strong performance of CMS in light of contemporary theories of what makes training on time-series challenging.},
+    URL = {https://arxiv.org/abs/2608.05777},
+    eprint = {https://arxiv.org/pdf/2608.05777},
+    journal = {arXiv}
+}
+
+@article{deep-mechanistic-models,
+    author = {Fabrini, Giacomo and Fr{\"o}hlich, Fabian},
+    title = {Deep Mechanistic Models reveal pathway-extrinsic drivers of mammary MAPK signalling heterogeneity},
+    year = {2026},
+    month = {07},
+    day = {31},
+    doi = {10.64898/2026.07.30.741759},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {Cells sense and respond to their environment through signalling pathways, and the dynamics of these pathways shape cell fate even within genetically identical populations. Two largely separate computational traditions describe this behaviour: mechanistic differential-equation models and representation-learning methods. Mechanistic models encode pathway topology and kinetics but cannot easily represent variation arising outside the modelled pathway. Representation learning, instead, maps genome-wide measurements onto low-dimensional manifolds but offers no mechanistic account of how the resulting cell states execute their functions. Reconciling these views, explaining signalling heterogeneity in a manner that is at once data-driven and mechanistically interpretable, has remained difficult. Here we introduce deep mechanistic models (DMMs), which couple semi-supervised representation learning to an ordinary-differential-equation model of EGFR/MAPK signalling, trained end-to-end so that the learnt representation and mechanistic parametrisation inform each other. Applying DMMs to multiplexed signalling data from 63 breast cancer cell lines, we show that the models generalise to held-out cell lines and attribute most heterogeneity to pathway-extrinsic factors, namely baseline ERBB2 activation and a Ca²⁺/p38 signalling axis, rather than to variation in core MAPK components. Where the models fail, the discrepancies pinpoint rare signalling-altering mutations and recurrent programmes, including a putative AMPK–BRAF MEK-inhibitor-resistance axis and a cytoskeletal programme. We further find that mechanistic integration of EGFR receptor levels reshapes the learnt representation, rendering a molecular and a systems-level account of the same data equivalent in predictive power. DMMs thus offer a general framework for fusing mechanism with learning, naturally extendable to further modalities such as imaging, and simultaneously turn model failure into a systematic route to discover and evaluate candidate biology.},
+    URL = {https://www.biorxiv.org/content/10.64898/2026.07.30.741759v1},
+    eprint = {https://www.biorxiv.org/content/10.64898/2026.07.30.741759v1.full.pdf},
+    journal = {bioRxiv}
+}
+
+@article{nlme-integration,
+    author = {Wang, Dantong and Fr{\"o}hlich, Fabian and Stapor, Paul and Sch{\"a}lte, Yannik and Huth, M. and Eils, R. and Kallenberger, S. and Hasenauer, Jan},
+    title = {Nonlinear mixed-effect models and tailored parametrization schemes enables integration of single cell and bulk data},
+    year = {2026},
+    month = {04},
+    day = {09},
+    doi = {10.64898/2026.04.06.716803},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {Experimental methods for characterizing single cells and cell populations have improved tremendously over the past decades. This progress has enabled the development of quantitative, mechanistic models for cellular processes based on either single cell or bulk data. However, coherent statistical frameworks for the model-based integration of different data types at the single-cell and population levels are still missing. In this work, we present a mathematical modeling approach for integrating single-cell time-lapse, single-cell snapshot, single-cell time-to-event and population-average data. Utilizing a formulation based on nonlinear mixed-effect modeling, we enable the description of multiple data types, with and without single-cell resolution, and we propose a tailored parameter estimation method. Furthermore, we propose a tailored parameter estimation scheme that facilitates the assessment of underlying process parameters. Our study demonstrates that the proposed approach can reliably integrate diverse data types, thereby improving parameter identifiability and prediction accuracy. Applying this framework of extrinsic apoptosis reveals that simultaneously considering multiple data types can be essential, particularly when experimental constraints limit data availability. The proposed approach is broadly applicable and may significantly advance our understanding of complex biological processes.},
+    URL = {https://www.biorxiv.org/content/10.64898/2026.04.06.716803v1},
+    eprint = {https://www.biorxiv.org/content/10.64898/2026.04.06.716803v1.full.pdf},
+    journal = {bioRxiv}
+}
+
+@article{akt-resistance-sahai,
+    author = {Ratcliffe, C. D. H. and Sparks, H. and Boezio, G. L. M. and Alexandrov, Y. and Jenkins, R. P. and Le Marois, A. and Soro-Barrio, P. and Moughari, F. A. and Hulme, H. and Lee, R. J. and Strohbuecker, S. and Joshi, S. and Ellis, J. K. and Fabrini, G. and Flint, L. and Fortier, A.-M. and Gustafsson, N. and Cunha, A. C. and Tully, L. and Park, M. and Fr{\"o}hlich, F. and MacRae, J. I. and Natrajan, R. and Serio, A. and Briscoe, J. and Riddell, A. and Barry, S. T. and Dunsby, C. and Sahai, E.},
+    title = {Multimodal profiling unveils a reversible breast basal-like cell state in AKT-inhibitor resistant tumours},
+    year = {2025},
+    month = {11},
+    day = {17},
+    doi = {10.1101/2025.06.06.658331},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {The PI3K/AKT/mTOR pathway is central to cell metabolism and growth. However, pharmacological inhibition of the pathway is not uniformly effective across cancer types, or even within a single cancer model. In this study, we leverage oblique plane microscopy of triple negative breast cancer organoids, as well as lineage tracing to uncover a source of heterogeneity. Non-genetic resistance to AKT inhibition is associated with basal cell features of normal breast epithelium and the master transcription factor of basal cell state, ΔNp63, is sufficient to confer resistance. Cells can transition between states within four weeks and therefore, AKT inhibition only delays tumour growth, with tumours rich in KRT14+ cells resulting. Thus, under selection, triple negative breast cancer exploits a repertoire of cell states inherent to the breast.},
+    URL = {https://www.biorxiv.org/content/10.1101/2025.06.06.658331v2},
+    eprint = {https://www.biorxiv.org/content/10.1101/2025.06.06.658331v2.full.pdf},
+    journal = {bioRxiv}
+}
+
+@article{Persson-petab,
+    author = {Persson, Sebastian and Fr{\"o}hlich, Fabian and Grein, Stephan and Loman, Torkel and Ognissanti, Damiano and Hasselgren, Viktor and Hasenauer, Jan and Cvijovic, Marija},
+    title = {PEtab.jl: advancing the efficiency and utility of dynamic modelling},
+    journal = {Bioinformatics},
+    volume = {41},
+    number = {9},
+    pages = {btaf497},
+    year = {2025},
+    month = {09},
+    day = {09},
+    doi = {10.1093/bioinformatics/btaf497},
+    abstract = {Dynamic models represent a powerful tool for studying complex biological processes, ranging from cell signalling to cell differentiation. Building such models often requires computationally demanding modelling workflows, such as model exploration and parameter estimation. We developed two Julia-based tools: SBMLImporter.jl, an SBML importer, and PEtab.jl, an importer for parameter estimation problems in the PEtab format, designed to streamline modelling processes. These tools leverage Julia's high-performance computing capabilities, including symbolic pre-processing and advanced ODE solvers. PEtab.jl aims to be a Julia-accessible toolbox that supports the entire modelling pipeline from parameter estimation to identifiability analysis. SBMLImporter.jl and PEtab.jl are implemented in the Julia programming language. Both packages are available on GitHub (github.com/sebapersson/SBMLImporter.jl and github.com/sebapersson/PEtab.jl) as officially registered Julia packages, installable via the Julia package manager. Each package is continuously tested and supported on Linux, macOS, and Windows.},
+    url = {https://doi.org/10.1093/bioinformatics/btaf497},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/41/9/btaf497/64232071/btaf497.pdf}
+}
+
 @article{cure-sauro,
-      title={From FAIR to CURE: Guidelines for Computational Models of Biological Systems}, 
-      author={Herbert M. Sauro and Eran Agmon and Michael L. Blinov and John H. Gennari and Joe Hellerstein and Adel Heydarabadipour and Peter Hunter and Bartholomew E. Jardine and Elebeoba May and David P. Nickerson and Lucian P. Smith and Gary D Bader and Frank Bergmann and Patrick M. Boyle and Andreas Drager and James R. Faeder and Song Feng and Juliana Freire and Fabian Frohlich and James A. Glazier and Thomas E. Gorochowski and Tomas Helikar and Stefan Hoops and Princess Imoukhuede and Sarah M. Keating and Matthias Konig and Reinhard Laubenbacher and Leslie M. Loew and Carlos F. Lopez and William W. Lytton and Andrew McCulloch and Pedro Mendes and Chris J. Myers and Jerry G. Myers and Lealem Mulugeta and Anna Niarakis and David D. van Niekerk and Brett G. Olivier and Alexander A. Patrie and Ellen M. Quardokus and Nicole Radde and Johann M. Rohwer and Sven Sahle and James C. Schaff and T. J. Sego and Janis Shin and Jacky L. Snoep and Rajanikanth Vadigepalli and H. Steve Wiley and Dagmar Waltemath and Ion Moraru},
-      year={2025},
-      month = {02},
-      day = {21},
-      abstract = {Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible.},
-      eprint={https://arxiv.org/pdf/2502.15597},
-      doi={https://doi.org/10.48550/arXiv.2502.15597},
-      url={https://arxiv.org/abs/2502.15597},
-      journal = {arXiv}
+    title = {From FAIR to CURE: guidelines for computational models of biological systems},
+    author = {Sauro, Herbert M. and Agmon, Eran and Blinov, Michael L. and Gennari, John H. and Hellerstein, Joseph L. and Heydarabadipour, Adel and Jardine, Bartholomew E. and May, Elebeoba and Nickerson, David P. and Smith, Lucian P. and Bader, Gary D. and Bergmann, Frank T. and Boyle, Patrick M. and Dr{\"a}ger, Andreas and Faeder, James R. and Feng, Song and Freire, Juliana and Fr{\"o}hlich, Fabian and Glazier, James A. and Gorochowski, Thomas E. and Helikar, Tomas and Hermjakob, Henning and Hoops, Stefan and Hunter, Peter and Imoukhuede, Princess I. and Keating, Sarah M. and K{\"o}nig, Matthias and Laubenbacher, Reinhard and Loew, Leslie M. and Lopez, Carlos F. and Lytton, William W. and Malik-Sheriff, Rahuman S. and McCulloch, Andrew and Mendes, Pedro and Mulugeta, Lealem and Myers, Chris J. and Myers, Jerry G. and Niarakis, Anna and van Niekerk, David D. and Olivier, Brett G. and Patrie, Alexander A. and Quardokus, Ellen M. and Radde, Nicole and Rohwer, Johann M. and Sahle, Sven and Schaff, James C. and Schreiber, Falk and Sego, T. J. and Shin, Janis and Snoep, Jacky L. and Vadigepalli, Rajanikanth and Wiley, H. Steven and Waltemath, Dagmar and Moraru, Ion I.},
+    journal = {npj Systems Biology and Applications},
+    volume = {12},
+    number = {1},
+    pages = {77},
+    year = {2026},
+    month = {03},
+    day = {27},
+    doi = {10.1038/s41540-026-00651-0},
+    abstract = {Guidelines for managing scientific data have been established under the FAIR principles, requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community should strive to automate as many of the guidelines as possible.},
+    url = {https://www.nature.com/articles/s41540-026-00651-0},
+    eprint = {https://www.nature.com/articles/s41540-026-00651-0.pdf}
 }
 
 @article{Cortes-cell-cycle,
     author = {Cort{\'e}s-R{\'\i}os, Javiera and Rodriguez-Fernandez, Maria and Sorger, Peter K. and Fr{\"o}hlich, Fabian},
-    title = {Dynamic Modeling of Cell Cycle Arrest Through Integrated Single-Cell and Mathematical Modelling Approaches},
+    title = {Dynamic modelling of cell cycle arrest through integrated single-cell and mathematical modelling approaches},
+    journal = {PLoS Computational Biology},
+    volume = {21},
+    number = {10},
+    pages = {e1012890},
     year = {2025},
-    month = {02},
-    day = {20},
-    doi = {https://doi.org/10.1101/2025.02.20.639240},
-    publisher = {Cold Spring Harbor Laboratory},
-    abstract = {Highly multiplexed imaging assays allow simultaneous quantification of multiple protein and phosphorylation markers, providing a static snapshots of cell types and states. Pseudo-time techniques can transform these static snapshots of unsynchronized cells into dynamic trajectories, enabling the study of dynamic processes such as development trajectories and the cell cycle. Such ordering also enables training of mathematical models on these data, but technical challenges have hitherto made it difficult to integrate multiple experimental conditions, limiting the predictive power and insights these models can generate. In this work, we propose data processing and model training approaches for integrating multiplexed, multi-condition immunofluorescence data with mathematical modelling. We devise training strategies that are applicable to datasets where cells exhibit oscillatory as well as arrested dynamics and use them to train a cell cycle model on a dataset of MCF-10A mammary epithelial exposed to cell-cycle arresting small molecules. We validate the model by investigating predicted growth factor sensitivities and responses to inhibitors of cells at different initial conditions. We anticipate that our framework will generalise to other highly multiplexed measurement techniques such as mass-cytometry, rendering larger bodies of data accessible to dynamic modelling and paving the way to deeper biological insights.Author Summary Advanced imaging techniques allow us to see detailed pictures of different proteins and cell changes. By using computational algorithms, we turn these static pictures into dynamic sequences to understand processes like the cell cycle better. However, combining data from different experiments is difficult and limits how well our models can predict outcomes. This study introduces new ways to process data and train models to handle complex data from various conditions.The approach is tested by using data from untreated and treated cells to create a model of the cell cycle. This model was then checked for accuracy by seeing how well it could predict how cells respond to growth factors and drugs from different starting points. In the future, this method could be used with other data types, allowing for more detailed and accurate models of cellular behavior.},
-    URL = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639240},
-    eprint = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639240.full.pdf},
-    journal = {bioRxiv}
+    month = {10},
+    day = {07},
+    doi = {10.1371/journal.pcbi.1012890},
+    abstract = {Highly multiplexed imaging assays allow simultaneous quantification of multiple protein and phosphorylation markers, providing a static snapshots of cell types and states. Pseudo-time techniques can transform these static snapshots of unsynchronized cells into dynamic trajectories, enabling the study of dynamic processes such as development trajectories and the cell cycle. Such ordering also enables training of mathematical models on these data, but technical challenges have hitherto made it difficult to integrate multiple experimental conditions, limiting the predictive power and insights these models can generate. In this work, we propose data processing and model training approaches for integrating multiplexed, multi-condition immunofluorescence data with mathematical modelling. We devise training strategies for mathematical models that are applicable to datasets where cells exhibit oscillatory as well as arrested dynamics and use them to train a cell cycle model on a dataset of MCF-10A mammary epithelial cells exposed to cell-cycle arresting small molecules. We validate the model by investigating predicted growth factor sensitivities and responses to inhibitors of cells at different initial conditions. We anticipate that our framework will generalise to other highly multiplexed measurement techniques such as mass-cytometry, rendering larger bodies of data accessible to dynamic modelling and paving the way to deeper biological insights.},
+    url = {https://doi.org/10.1371/journal.pcbi.1012890},
+    eprint = {https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1012890&type=printable}
 }
-
 
 @article{erk-pulses-sahai
     author = {Le Marois, Alix and Bailey, Sasha and Hooper, Steven and Kumar, Sunil and Sparks, Hugh and Alexandrov, Yuriy and Caswell, Deborah and Fr{\"o}hlich, Fabian and Schlegelmilch, Karin and Valand, Karishma and Martin, Matthew and Narvaez, Ana and Swanton, Charles and Downward, Julian and Dunsby, Christopher and French, Paul and Sahai, Erik},

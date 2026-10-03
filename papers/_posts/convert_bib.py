@@ -39,7 +39,8 @@ J_ABBREV = {
     'Nucleic Acids Research': 'Nucleic Acids Res.',
     'npj Systems Biology and Applications': 'npj Syst. Biol. Appl.',
     'Molecular Systems Biology': 'Mol. Syst. Biol.',
-    'Cell Reports': 'Cell Rep.'
+    'Cell Reports': 'Cell Rep.',
+    'Journal of Integrative Bioinformatics': 'J. Integr. Bioinform.'
 }
 
 MAPPINGS = {
@@ -81,9 +82,17 @@ CODE_LINKS = {
     '2023-11-23-schalte-pypesto': 'https://github.com/ICB-DCM/pyPESTO',
     '2024-02-16-frohlich-msb-nv': '',
     '2024-05-17-le marois-erk-pulses-sahai': 'https://github.com/alixlemarois/dynamic_signalling',
-    '2025-05-04-persson-Persson-petab': 'https://github.com/sebapersson/PEtab.jl',
-    '2025-02-21-sauro-cure-sauro': '',
-    '2025-02-20-cortes-rios-Cortes-cell-cycle': 'https://www.synapse.org/#!Synapse:syn55267562/files/',
+    '2025-09-09-persson-Persson-petab': 'https://github.com/sebapersson/PEtab.jl',
+    '2026-03-27-sauro-cure-sauro': '',
+    '2025-10-07-cortes-rios-Cortes-cell-cycle': 'https://www.synapse.org/#!Synapse:syn55267562/files/',
+    '2025-11-17-ratcliffe-akt-resistance-sahai': '',
+    '2026-04-09-wang-nlme-integration': '',
+    '2026-07-31-fabrini-deep-mechanistic-models': 'https://github.com/frohlich-lab/DeepMechanisticModels',
+    '2026-08-06-persson-curriculum-shooting': '',
+    '2026-08-13-pathirana-petab-v2': 'https://github.com/PEtab-dev/PEtab',
+    '2026-08-20-persson-petab-sciml': 'https://github.com/PEtab-dev/petab_sciml',
+    '2026-08-21-de pomereu-symbolic-regression': 'https://github.com/frohlich-lab/symbolic_regression_signalling',
+    '2026-09-28-de pomereu-gemot': '',
 
 }
 
@@ -164,14 +173,17 @@ for pubkey, entry in bib_data.entries.items():
     # parse authors
     authors = entry.persons['author']
 
+    # prelast_names holds lowercase particles such as "de" or "van"
     template_data['FIRSTAUTH'] = ' '.join(
-        sanitize(name) for name in entry.persons['author'][0].last_names
+        sanitize(name) for name in
+        authors[0].prelast_names + authors[0].last_names
     )
     firstauth = template_data['FIRSTAUTH'].lower()
 
     template_data['AUTHORS'] = ', '.join(
         ' '.join((
-            ' '.join(sanitize(name) for name in author.last_names),
+            ' '.join(sanitize(name)
+                     for name in author.prelast_names + author.last_names),
             ''.join(sanitize(name)[0].upper()
                     for name in author.first_names + author.middle_names)
         ))
