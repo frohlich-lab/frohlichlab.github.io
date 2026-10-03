@@ -31,7 +31,7 @@ navorder: 1
       <p class="note">{{ paper.ref }}</p>
       {% if paper.image %}
       <a href="{{ paper.url }}">
-        <img width="100" src="{{ paper.image }}" alt="">
+        <img width="100" src="{{ paper.image }}" alt="{{ paper.title | escape }}">
       </a>
       {% endif %}
       <div class="bigspacer"></div>
