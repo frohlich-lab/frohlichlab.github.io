@@ -1,0 +1,19 @@
+# Used by _plugins/papers.rb when building pages from papers/_posts/bibliography.bib.
+
+# Entries whose `journal` is one of these are marked as preprints.
+preprint_servers:
+  - bioRxiv
+  - arXiv
+  - medRxiv
+
+# Short names for the "Persson et al. 2025. Bioinformatics" line on the papers
+# list. Journals not listed here are shown with their full name.
+abbreviations:
+  PLoS Computational Biology: PLoS Comput. Biol.
+  Cell Systems: Cell Syst.
+  Briefings in Bioinformatics: Brief. Bioinform.
+  Nucleic Acids Research: Nucleic Acids Res.
+  npj Systems Biology and Applications: npj Syst. Biol. Appl.
+  Molecular Systems Biology: Mol. Syst. Biol.
+  Cell Reports: Cell Rep.
+  Journal of Integrative Bioinformatics: J. Integr. Bioinform.
