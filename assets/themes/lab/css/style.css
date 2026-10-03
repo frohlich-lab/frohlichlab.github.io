@@ -554,3 +554,18 @@ a.off {
 }
 
 .alumni-title { text-align: center; }
+
+/* ---------- Print ---------- */
+
+/* Like Bootstrap's print styles: no fixed bars, which would repeat on
+   every printed page and cover content. */
+@media print {
+	.site-header,
+	.site-footer,
+	.skip-link { display: none; }
+
+	.site-main {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
