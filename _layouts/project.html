@@ -10,11 +10,13 @@ layout: default
       <img class="toollogo" src="{{ page.image }}" alt="">
       {% endif %}
     </div>
+    {% if page.github %}
     <div class="note">
       <div class="smallspacer"></div>
       {% include icon.html name="github" %}
       <a class="off" href="https://github.com/{{ page.github }}">{{ page.github }}</a>
     </div>
+    {% endif %}
   </div>
 
   <div>
