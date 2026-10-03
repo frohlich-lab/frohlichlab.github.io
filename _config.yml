@@ -15,6 +15,7 @@ theme: null
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 # jekyll-redirect-from would otherwise publish an (empty) /redirects.json
 redirect_from:
@@ -22,8 +23,10 @@ redirect_from:
 
 repository: frohlich-lab/frohlichlab.github.io
 
-# Used for absolute URLs (feed, sitemap)
+# Used for absolute URLs (feed, sitemap). baseurl must be set explicitly, or
+# jekyll-github-metadata guesses one from the GitHub API.
 url: https://www.frohlichlab.com
+baseurl: ""
 
 title : Fröhlich Lab
 tagline: Dynamics of Living Systems Lab
