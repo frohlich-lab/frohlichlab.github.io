@@ -4,9 +4,9 @@
     posts       - the posts to list, e.g. site.categories.news
     link_titles - link each title to the post's own page
 {% endcomment %}
-<div class="pt-20">
+<div class="boxes">
 {% for post in include.posts %}
-	<article class="split pt-20 post-entry">
+	<article class="split box post-entry">
 		<div>
 			<h2 class="head">
 				{% if include.link_titles %}

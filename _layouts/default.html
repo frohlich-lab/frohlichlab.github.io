@@ -65,7 +65,14 @@
     </header>
 
     <main class="container site-main" id="content">
+      {% comment %} List pages set `box: false` and draw a box per item instead. {% endcomment %}
+      {% if page.box == false %}
       {{ content }}
+      {% else %}
+      <div class="box page-box">
+        {{ content }}
+      </div>
+      {% endif %}
     </main>
 
     <footer class="site-footer">

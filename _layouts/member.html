@@ -7,7 +7,7 @@ layout: default
 {% assign papers = site.categories.papers | where_exp: "paper", "paper.authors contains lastname" %}
 {% capture email %}{{ member.email | split: '@' | first }}<span style="display:none">obfuscate</span>@{{ member.email | split: '@' | last }}{% endcapture %}
 
-<div class="split pt-20">
+<div class="split">
 	<div>
 		{% if member.image %}
 		<img class="big-member-photo" src="{{ member.image }}" alt="{{ member.title }}">

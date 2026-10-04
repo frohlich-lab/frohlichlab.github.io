@@ -6,7 +6,7 @@ layout: default
 {% assign papers = site.categories.papers | where_exp: "paper", "paper.code contains page.github" %}
 {% endif %}
 
-<div class="split split-narrow pt-20">
+<div class="split split-narrow">
   <div>
     <div class="logobox">
       {% if page.image %}
