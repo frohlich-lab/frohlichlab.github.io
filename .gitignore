@@ -13,3 +13,6 @@ Thumbs.db
 .rvmrc
 .obsidian/*
 venv/*
+
+# Claude Code local config (preview launch config, worktrees)
+.claude/
