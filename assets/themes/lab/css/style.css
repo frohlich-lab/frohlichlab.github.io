@@ -667,7 +667,23 @@ a.off {
 
 .post-body h2 { margin-top: 30px; }
 
-.reading-time { margin-top: 8px; }
+/* Date, reading time and word count under a post's title. */
+.post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 0.5em;
+	margin-top: 10px;
+	font-size: 15px;
+	color: var(--subtle);
+}
+
+/* After each item, so a wrapped line never starts with a dot. */
+.post-meta > :not(:last-child)::after {
+	margin-left: 0.5em;
+	content: "·";
+}
+
+.post-date { color: var(--fg); }
 
 .post-body li + li { margin-top: 4px; }
 

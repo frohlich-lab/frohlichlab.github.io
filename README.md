@@ -86,7 +86,7 @@ Blog posts (`blog/_posts`) work the same way. The blog page shows posts in full;
 
 	</details>
 
-Blog posts show their reading time under the date, worked out by `_plugins/reading_time.rb` from the word count: one figure for the main text and, if the post has boxes, one including them.
+Blog posts show their word count and reading time next to the date, worked out by `_plugins/reading_stats.rb`: one figure for the main text and, if the post has boxes, one for the expanded view with every box open.
 
 Team members, tools and research topics have no date in their file name: for members and tools the file name is the URL (`_team/Jana.md` becomes `/team/Jana`). Copy an existing file in `_team/` (`layout: member`) or `_tools/` (`layout: project`). Research topics in `_research/` only appear on the research page and have no page of their own; each needs an `icon:` (a square image in `assets/images/research/`). Team members are listed by their `joined:` date (set `alum: true` and `last_seen:` when someone leaves); tools and research topics by their `order:` number. Link to them from other pages with `{% link _team/Jana.md %}`.
 

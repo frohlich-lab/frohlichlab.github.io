@@ -3,28 +3,19 @@ layout: default
 ---
 <div class="page-header">
   <h1>{{ page.title }}</h1>
-</div>
-
-<div class="split split-narrow">
-  <div class="note pt-20 pb-20">
-    <div class="smallhead">
-      {{ page.date | date_to_string }}
-    </div>
+  <div class="post-meta">
+    <span class="post-date">{{ page.date | date_to_string }}</span>
     {% if page.categories contains "blog" %}
-    {% comment %} Minutes from _plugins/reading_time.rb {% endcomment %}
-    {% assign minutes = content | reading_time %}
-    {% assign minutes_all = content | reading_time: "all" %}
-    <div class="smallnote subtle reading-time">
-      {{ minutes }} min read
-      {% if minutes_all > minutes %}<br>{{ minutes_all }} min with boxes{% endif %}
-    </div>
+    {% comment %} Word counts and reading times from _plugins/reading_stats.rb {% endcomment %}
+    {% assign stats = content | reading_stats %}
+    <span>{{ stats.minutes }} min read, {{ stats.words }} words</span>
+    {% if stats.boxes %}<span>expanded view: {{ stats.minutes_expanded }} min, {{ stats.words_expanded }} words</span>{% endif %}
     {% endif %}
   </div>
-  <div class="note pt-20">
-    <div class="post-body">
-      {{ content }}
-    </div>
-  </div>
+</div>
+
+<div class="note post-body">
+  {{ content }}
 </div>
 
 <script>
