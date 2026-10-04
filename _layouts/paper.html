@@ -9,7 +9,7 @@ with gratitude. Pages are generated from bibliography.bib by _plugins/papers.rb.
 {% if page.pdf %}{% assign fulltext_text = "PDF" %}{% elsif page.preprint %}{% assign fulltext_text = "Preprint PDF" %}{% else %}{% assign fulltext_text = "Journal PDF" %}{% endif %}
 {% assign code_text = page.code | remove: 'http://' | remove: 'https://' %}
 
-<div class="split split-wide pt-20">
+<div class="split split-wide">
 	<div></div>{% comment %} empty sidebar column keeps the title aligned with the abstract {% endcomment %}
 	<div>
 		{% if page.preprint %}

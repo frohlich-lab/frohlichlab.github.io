@@ -20,10 +20,21 @@
 
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }}: News and Blog">
 
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+      // Runs before the first paint: flags JavaScript support and applies the
+      // visitor's stored theme, or the site default from _config.yml.
+      (function (root) {
+        root.classList.add('js');
+        var theme = '{{ site.theme_default | default: "auto" }}';
+        try { theme = localStorage.getItem('theme') || theme; } catch (e) {}
+        if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
+      })(document.documentElement);
+    </script>
+    <script src="/assets/themes/lab/js/life.js" defer></script>
   </head>
 
   <body>
+    <canvas class="life" aria-hidden="true"></canvas>
     <a class="skip-link" href="#content">Skip to content</a>
 
     <header class="site-header">
@@ -31,6 +42,10 @@
         <a class="site-logo" href="/">
           <img src="/assets/themes/lab/images/logo/lab-logo.png" alt="{{ site.title }} home" width="50" height="50">
         </a>
+        <button class="theme-toggle" type="button" aria-label="Switch theme">
+          <span class="icon-moon">{% include icon.html name="moon" %}</span>
+          <span class="icon-sun">{% include icon.html name="sun" %}</span>
+        </button>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
           <span class="visually-hidden">Toggle navigation</span>
           <span class="nav-toggle__bar"></span>
@@ -50,7 +65,14 @@
     </header>
 
     <main class="container site-main" id="content">
+      {% comment %} List pages set `box: false` and draw a box per item instead. {% endcomment %}
+      {% if page.box == false %}
       {{ content }}
+      {% else %}
+      <div class="box page-box">
+        {{ content }}
+      </div>
+      {% endif %}
     </main>
 
     <footer class="site-footer">
@@ -82,6 +104,29 @@
             toggle.focus();
           }
         });
+      })();
+
+      // Light/dark button. Without a stored choice the theme follows the system.
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector('.theme-toggle');
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+        function current() {
+          return root.dataset.theme || (systemDark.matches ? 'dark' : 'light');
+        }
+        function render() {
+          var theme = current();
+          button.dataset.current = theme;
+          button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+          document.dispatchEvent(new Event('themechange'));
+        }
+        button.addEventListener('click', function () {
+          root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+          render();
+        });
+        systemDark.addEventListener('change', render);
+        render();
       })();
     </script>
   </body>

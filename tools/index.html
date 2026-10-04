@@ -4,10 +4,12 @@ title: Software
 description: "Tools developed in the lab"
 group: navigation
 navorder: 2
+box: false
 ---
 
+<div class="boxes">
 {% for project in site.tools %}
-  <div class="split split-narrow pt-20">
+  <div class="split split-narrow box">
     <div class="logobox">
       {% if project.image %}
       <a href="{{ project.url }}">
@@ -31,3 +33,4 @@ navorder: 2
     </div>
   </div>
 {% endfor %}
+</div>

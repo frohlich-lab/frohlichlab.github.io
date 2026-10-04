@@ -3,6 +3,7 @@ layout: default
 title: Fröhlich Lab
 heading: Dynamics of Living Systems Lab
 banner: /assets/images/team/lab.jpg
+box: false
 ---
 
 <h1 class="home-title">{{ page.heading }}</h1>
@@ -11,13 +12,14 @@ banner: /assets/images/team/lab.jpg
 	<img src="{{ page.banner }}" alt="">
 </div>
 
-<div class="smallhead">
+<div class="boxes">
+<div class="box smallhead">
 	{% capture home_text %}{% include home.md %}{% endcapture %}
 	{{ home_text | markdownify }}
 </div>
 
-<div class="columns-3 home-feeds pt-50">
-	<section>
+<div class="boxes columns-3 home-feeds">
+	<section class="box">
 		<h2 class="head">
 			<a class="off" href="/news/">News</a>
 		</h2>
@@ -36,7 +38,7 @@ banner: /assets/images/team/lab.jpg
 		</div>
 		{% endfor %}
 	</section>
-	<section>
+	<section class="box">
 		<h2 class="head">
 			<a class="off" href="/blog/">Posts</a>
 		</h2>
@@ -52,7 +54,7 @@ banner: /assets/images/team/lab.jpg
 		</div>
 		{% endfor %}
 	</section>
-	<section>
+	<section class="box">
 		<h2 class="head">
 			<a class="off" href="/papers/">Papers</a>
 		</h2>
@@ -70,4 +72,5 @@ banner: /assets/images/team/lab.jpg
 		</div>
 		{% endfor %}
 	</section>
+</div>
 </div>

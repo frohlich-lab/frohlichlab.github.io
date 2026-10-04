@@ -4,10 +4,13 @@ title: Team
 description: "People in the lab"
 group: navigation
 navorder: 3
+box: false
 ---
 
 {% assign current_team = site.team | where: "alum", false %}
-<div class="columns-3 team-grid pt-20">
+<div class="boxes">
+<section class="box">
+<div class="columns-3 team-grid">
 {% for member in current_team %}
 	<div class="member-card">
 		<a href="{{ member.url }}">
@@ -20,8 +23,9 @@ navorder: 3
 	</div>
 {% endfor %}
 </div>
+</section>
 
-<hr class="double-rule">
+<section class="box">
 <h2 class="title alumni-title">Alumni</h2>
 
 {% assign alumni = site.team | where: "alum", true | reverse %}
@@ -34,4 +38,6 @@ navorder: 3
 		</div>
 	</div>
 {% endfor %}
+</div>
+</section>
 </div>
