@@ -79,7 +79,7 @@ This new announcement won't yet be public. The section after next shows you how 
 
 Blog posts (`blog/_posts`) work the same way.
 
-Team members, tools and research topics have no date in their file name: the file name is the URL (`_team/Jana.md` becomes `/team/Jana`). Copy an existing file in `_team/` (`layout: member`), `_tools/` or `_research/` (`layout: project`). Team members are listed by their `joined:` date (set `alum: true` and `last_seen:` when someone leaves); tools and research topics by their `order:` number. Link to them from other pages with `{% link _team/Jana.md %}`.
+Team members, tools and research topics have no date in their file name: for members and tools the file name is the URL (`_team/Jana.md` becomes `/team/Jana`). Copy an existing file in `_team/` (`layout: member`) or `_tools/` (`layout: project`). Research topics in `_research/` only appear on the research page and have no page of their own. Team members are listed by their `joined:` date (set `alum: true` and `last_seen:` when someone leaves); tools and research topics by their `order:` number. Link to them from other pages with `{% link _team/Jana.md %}`.
 
 ## Adding a paper
 

@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Heterogeneity
 order: 3
 ---

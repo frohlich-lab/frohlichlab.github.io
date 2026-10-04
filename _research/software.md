@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Methods Development
 order: 1
 ---

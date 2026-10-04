@@ -5,6 +5,7 @@ permalink: /:categories/:title
 
 # Lab members, software and research topics. Not posts: they have no publication
 # date. URLs come from the file name, e.g. _team/Jana.md -> /team/Jana.
+# Research topics only appear on /research/ and get no page of their own.
 collections:
   team:
     output: true
@@ -15,8 +16,7 @@ collections:
     permalink: /tools/:title
     sort_by: order
   research:
-    output: true
-    permalink: /research/:title
+    output: false
     sort_by: order
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor", "node_modules", "venv"]

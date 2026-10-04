@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% comment %} Research projects (research/_posts) and software tools (tools/_posts). {% endcomment %}
+{% comment %} Software tools (_tools/). {% endcomment %}
 {% if page.github %}
 {% assign papers = site.categories.papers | where_exp: "paper", "paper.code contains page.github" %}
 {% endif %}

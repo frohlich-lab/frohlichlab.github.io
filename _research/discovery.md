@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Discovery
 order: 2
 ---
