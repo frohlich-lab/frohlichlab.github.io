@@ -5,6 +5,7 @@ tagline: Advanced Multilanguage Interface to CVODES and IDAS
 github: AMICI-dev/AMICI
 image: /assets/images/projects/amici.png
 description: High performance ordinary differential equation solver for simulation and sensitivity computation.
+order: 3
 ---
 AMICI is a software tool for efficient simulation and sensitivity of ODE models.
 It provides forward, adjoint and steadystate sensitivity analysis with support
@@ -23,5 +24,5 @@ Julia interface is currently under development. It is jointly developed with the
 [BioNetGen Laguage]: https://bionetgen.org
 [Systems Biology Markup Language]: https://sbml.org
 [PySB]: https://pysb.org
-[PETab]: {% post_url tools/2022-11-07-PEtab %}
-[pyPESTO]: {% post_url tools/2022-11-07-pypesto %}
+[PETab]: {% link _tools/PEtab.md %}
+[pyPESTO]: {% link _tools/pypesto.md %}

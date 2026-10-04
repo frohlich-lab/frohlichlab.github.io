@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Heterogeneity
-image: /assets/images/projects/heterogeneity.jpg
+order: 3
 ---
 Signalling exhibits considerable cell-to-cell variability resulting in heterogeneous cellular decision-making outcomes. We build models of signal transduction that predict these outcomes based on quantifications of the molecular make-up of cells \[[Fröhlich *et. al* 2018]\].
 

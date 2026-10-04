@@ -9,6 +9,7 @@ orcid: 0000-0001-8601-1680
 image: /assets/images/team/Giacomo.jpg
 alum: true
 last_seen: ETH Zurich
+joined: 2023-10-18
 ---
 Giacomo was a Postdoctoral Fellow at the [Francis Crick Institute] and is now at [ETH Zurich].
 

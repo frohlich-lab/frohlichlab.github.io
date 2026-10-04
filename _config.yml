@@ -3,6 +3,22 @@
 # For more see: https://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:title
 
+# Lab members, software and research topics. Not posts: they have no publication
+# date. URLs come from the file name, e.g. _team/Jana.md -> /team/Jana.
+collections:
+  team:
+    output: true
+    permalink: /team/:title
+    sort_by: joined
+  tools:
+    output: true
+    permalink: /tools/:title
+    sort_by: order
+  research:
+    output: true
+    permalink: /research/:title
+    sort_by: order
+
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor", "node_modules", "venv"]
 highlighter: rouge
 

@@ -9,6 +9,7 @@ scholar: pGYETGQAAAAJ
 orcid: 0000-0002-5360-4292
 image: /assets/images/team/ff.jpeg
 alum: false
+joined: 2022-10-02
 ---
 Fabian is a group leader at the [Francis Crick Institute].
 

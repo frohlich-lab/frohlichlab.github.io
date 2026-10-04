@@ -40,16 +40,18 @@ and open http://127.0.0.1:4000. The site is rebuilt automatically whenever you s
 
 A site is a collection of HTML pages. For our site (and many others), there are page types, like a paper page, or a lab member page, which are the same in design but different in content. In the web-accessible site, these are indeed different pages. However, they are _generated_ from a single template file filled in with information from many member-specific Markdown files (or, for papers, BibTeX entries). This generation is done every time the site changes by a GitHub Actions workflow.
 
-- `_layouts/` – the page templates (`default` is the frame with navigation bar and footer; `paper`, `member`, `post`, `tool` and `project` are used by the respective Markdown files).
-- `_includes/` – reusable snippets and longer texts: `home.md` (home page text), `research.md` (research page intro), `post_list.html` (news/blog listing), `icon.html` (inline SVG icons).
+- `_layouts/` – the page templates (`default` is the frame with navigation bar and footer; `paper`, `member`, `post` and `project` (tools and research topics) are used by the respective Markdown files).
+- `_includes/` – reusable snippets and longer texts: `home.md` (home page text), `research.md` (research page intro), `post_list.html` (news/blog listing), `icon.html` (inline SVG icons), `link_item.html` (sidebar links on member, paper and tool pages).
 - `about.md`, `join.md` – the About and Join pages.
-- `<section>/index.html` – the overview pages (`research`, `papers`, `tools`, `team`, `news`, `blog`); the items they list live in `<section>/_posts/`.
+- `<section>/index.html` – the overview pages (`research`, `papers`, `tools`, `team`, `news`, `blog`).
+- `news/_posts/`, `blog/_posts/` – dated posts.
+- `_team/`, `_tools/`, `_research/` – one Markdown file per lab member, tool and research topic (Jekyll collections, configured in `_config.yml`).
 - `assets/` – images, PDFs and the stylesheet (`assets/themes/lab/css/style.css`).
 - `_design/` – Illustrator sources for the logo and artwork (not published).
 
 ## How to add content
 
-For most common actions---adding a lab member, tool, or news item---you'll be making a new Markdown file in the proper `_posts` folder, naming it properly, and filling in the required fields. In almost all cases, you can (and should!) copy an existing item, change the name, and change its content, rather than trying to write a Markdown document from scratch.
+For most common actions---adding a lab member, tool, or news item---you'll be making a new Markdown file in the proper folder, naming it properly, and filling in the required fields. In almost all cases, you can (and should!) copy an existing item, change the name, and change its content, rather than trying to write a Markdown document from scratch.
 
 For example, suppose you want to add a news item, which will appear on the front page, announcing that you have created a yeast strain capable of secreting high-quality chardonnay. Go into the `news/_posts` folder. Copy one of the existing items into a new file named with today's date (it matters!) and a brief title:
 
@@ -75,7 +77,9 @@ Now add it to the repository, commit and push your branch:
 
 This new announcement won't yet be public. The section after next shows you how to do that.
 
-The same basic process is used to add team members (`team/_posts`, `layout: member`), tools (`tools/_posts`, `layout: project`), blog posts (`blog/_posts`) and research topics (`research/_posts`).
+Blog posts (`blog/_posts`) work the same way.
+
+Team members, tools and research topics have no date in their file name: the file name is the URL (`_team/Jana.md` becomes `/team/Jana`). Copy an existing file in `_team/` (`layout: member`), `_tools/` or `_research/` (`layout: project`). Team members are listed by their `joined:` date (set `alum: true` and `last_seen:` when someone leaves); tools and research topics by their `order:` number. Link to them from other pages with `{% link _team/Jana.md %}`.
 
 ## Adding a paper
 

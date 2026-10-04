@@ -7,6 +7,7 @@ github: tamara-hodgetts
 orcid: 0000-0002-3991-1683
 image: /assets/images/team/Tamara.jpg
 alum: false
+joined: 2024-10-28
 ---
 Tamara is a PhD student at the [Francis Crick Institute] and [Delas Lab] at [University College London]. 
 

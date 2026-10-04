@@ -6,4 +6,4 @@ tags:
 ---
 [Tamara Hodgetts] joined the lab as PhD in October. Tamara will work on models of cell state transitions.
 
-[Tamara Hodgetts]: {% post_url team/2024-10-28-Tamara %}
+[Tamara Hodgetts]: {% link _team/Tamara.md %}

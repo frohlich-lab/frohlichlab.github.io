@@ -5,6 +5,7 @@ tagline: Parameter Estimation using tab-separated values files
 github: PEtab-dev/PEtab
 image: /assets/images/projects/petab.png
 description: Data format for specifying parameter estimation problems in systems biology.
+order: 4
 ---
 
 PEtab is a data format for specifying parameter estimation problems in systems
@@ -19,8 +20,8 @@ Users can import PEtab problems using different tools, including [AMICI],
 of these tools, support is facilitated through the official [python library].
 
 [documentation]: https://petab.readthedocs.io/en/latest/
-[AMICI]: {% post_url tools/2022-11-07-amici %}
-[pyPESTO]: {% post_url tools/2022-11-07-pypesto %}
+[AMICI]: {% link _tools/amici.md %}
+[pyPESTO]: {% link _tools/pypesto.md %}
 [d2d]: https://github.com/Data2Dynamics/d2d/
 [dMod]: https://github.com/dkaschek/dMod/
 [MEIGO]: https://github.com/gingproc-IIM-CSIC/MEIGO64

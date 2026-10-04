@@ -7,6 +7,7 @@ github: sadlejm
 orcid: 0000-0002-7572-3604
 image: /assets/images/team/Marta.jpg
 alum: false
+joined: 2023-10-05
 ---
 Marta is a PhD student at the [Francis Crick Institute] and [Orengo Lab] at [University College London].
 

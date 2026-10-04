@@ -6,4 +6,4 @@ tags:
 ---
 [Theodore de Pomereu] joined the lab as Laboratory Research Scientist in April. Theo will work on model discovery and coarse graining approaches.
 
-[Theodore de Pomereu]: {% post_url team/2024-05-30-Theo %}
+[Theodore de Pomereu]: {% link _team/Theo.md %}

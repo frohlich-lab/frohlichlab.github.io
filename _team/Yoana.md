@@ -7,6 +7,7 @@ scholar:
 orcid: 0000-0003-3268-1616
 image: "/assets/images/team/Yoana.jpg"
 alum: false
+joined: 2025-07-01
 ---
 
 Yoana is a staff scientist at the [Francis Crick Institute].

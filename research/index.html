@@ -9,20 +9,11 @@ navorder: 0
 {% capture research_text %}{% include research.md %}{% endcapture %}
 {{ research_text | markdownify }}
 
-{% for project in site.categories.research %}
-  <div class="split split-narrow pt-50">
-    <div class="logobox">
-      <img height="100%" src="{{ project.image }}" alt="">
-    </div>
-    <div class="projectbox">
-      <div>
-        <h2 class="head item-heading">{{ project.title }}</h2>
-        <div class="note">
-          {{ project.content }}
-        </div>
-      </div>
-    </div>
+{% for project in site.research %}
+<section class="pt-20">
+  <h2 class="head item-heading">{{ project.title }}</h2>
+  <div class="note">
+    {{ project.content }}
   </div>
+</section>
 {% endfor %}
-
-<p class="pt-50">Images generated with AI.</p>

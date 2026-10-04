@@ -8,6 +8,7 @@ scholar: w5-Y-94AAAAJ
 orcid: 0000-0002-7205-5516
 image: /assets/images/team/Branwen.jpg
 alum: false
+joined: 2025-08-14
 ---
 
 Branwen is a research engineer at the [Francis Crick Institute].

@@ -8,6 +8,7 @@ orcid: 0009-0001-2304-4263
 image: /assets/images/team/Sebastian.jpg
 alum: true
 last_seen: Novo Nordisk
+joined: 2025-04-22
 ---
 
 [Sebastian] was a Postdoctoral Fellow at the [Francis Crick Institute] and is now at [Novo Nordisk].

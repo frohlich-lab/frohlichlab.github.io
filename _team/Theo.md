@@ -7,6 +7,7 @@ github: pomereu-crick
 orcid: 0009-0009-9197-8795
 image: /assets/images/team/Theo.jpeg
 alum: false
+joined: 2024-05-30
 ---
 Theo is a PhD student at the [Francis Crick Institute] and the [Department of Mathematics at Imperial College London], where he is co-supervised by [Sarah Filippi]. 
 

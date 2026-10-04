@@ -6,4 +6,4 @@ tags:
 ---
 [Sebastian Persson] joined the lab as PostDoc in March. Sebastian will lead the development of our scientific machine learning ecosystem.
 
-[Sebastian Persson]: {% post_url team/2025-04-22-Sebastian %}
+[Sebastian Persson]: {% link _team/Sebastian.md %}

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Emergence
-image: /assets/images/projects/emergence.jpg
+order: 4
 ---
 Signalling is intricately regulated by numerous molecular mechanisms involving protein-protein interactions and post-translational modifications. We build detailed mechanistic models that account for protein structure \[[Gerosa *et. al* 2020], [Fröhlich *et. al* 2023]\] to learn the emergent regulatory principles for signalling.
 

@@ -7,6 +7,7 @@ github: janazaeh
 orcid: 0009-0006-6382-7293
 image: "/assets/images/team/Jana.jpg"
 alum: false
+joined: 2025-10-16
 ---
 
 Jana is a PhD student at the [Francis Crick Institute] and the [UCL Cancer Institute], where she is co-supervised by [Chris Tape]. Jana is using patient-derived organoids and mathematical modelling to study the interplay between cell signalling and therapy resistance in colorectal cancer.

@@ -6,9 +6,9 @@ group: navigation
 navorder: 3
 ---
 
-{% assign current_team = site.categories.team | where: "alum","false"%}
+{% assign current_team = site.team | where: "alum", false %}
 <div class="columns-3 team-grid pt-20">
-{% for member in current_team reversed %}
+{% for member in current_team %}
 	<div class="member-card">
 		<a href="{{ member.url }}">
 			<img class="member-photo" src="{{ member.image }}" alt="{{ member.title }}">
@@ -24,7 +24,7 @@ navorder: 3
 <hr class="double-rule">
 <h2 class="title alumni-title">Alumni</h2>
 
-{% assign alumni = site.categories.team | where: "alum","true"%}
+{% assign alumni = site.team | where: "alum", true | reverse %}
 <div class="columns-3 team-grid pt-20">
 {% for member in alumni %}
 	<div class="member-card">

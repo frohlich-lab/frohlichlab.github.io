@@ -4,6 +4,7 @@ title: Fides
 tagline: Reliable Trust-Region Optimization
 github: fides-dev/fides
 description: Trust-Region Optimization featuring various Hessian approximation schemes.
+order: 2
 ---
 
 Fides is a software tool for reliable optimization of continuously
