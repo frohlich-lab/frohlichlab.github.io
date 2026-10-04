@@ -12,8 +12,23 @@ layout: default
     </div>
   </div>
   <div class="note pt-20">
-    <div class="content">
+    <div class="post-body">
       {{ content }}
     </div>
   </div>
 </div>
+
+<script>
+  // Print collapsible boxes open, then restore them.
+  (function () {
+    var opened = [];
+    window.addEventListener('beforeprint', function () {
+      opened = Array.prototype.slice.call(document.querySelectorAll('details:not([open])'));
+      opened.forEach(function (d) { d.open = true; });
+    });
+    window.addEventListener('afterprint', function () {
+      opened.forEach(function (d) { d.open = false; });
+      opened = [];
+    });
+  })();
+</script>

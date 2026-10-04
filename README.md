@@ -77,7 +77,14 @@ Now add it to the repository, commit and push your branch:
 
 This new announcement won't yet be public. The section after next shows you how to do that.
 
-Blog posts (`blog/_posts`) work the same way.
+Blog posts (`blog/_posts`) work the same way. The blog page shows posts in full; for a long post, add `excerpt_separator: <!--more-->` to the front matter and put `<!--more-->` after the opening paragraphs, and the blog page shows only the text above it with a link to the rest. Background that readers can skip goes in a collapsible box, closed by default:
+
+	<details class="aside" markdown="1">
+	<summary markdown="span">Box title</summary>
+
+	Markdown text, lists or tables.
+
+	</details>
 
 Team members, tools and research topics have no date in their file name: for members and tools the file name is the URL (`_team/Jana.md` becomes `/team/Jana`). Copy an existing file in `_team/` (`layout: member`) or `_tools/` (`layout: project`). Research topics in `_research/` only appear on the research page and have no page of their own; each needs an `icon:` (a square image in `assets/images/research/`). Team members are listed by their `joined:` date (set `alum: true` and `last_seen:` when someone leaves); tools and research topics by their `order:` number. Link to them from other pages with `{% link _team/Jana.md %}`.
 

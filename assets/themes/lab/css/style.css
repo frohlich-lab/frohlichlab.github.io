@@ -33,6 +33,7 @@
 	--life: light-dark(rgba(51, 122, 183, 0.14), rgba(110, 168, 254, 0.12)); /* background cells */
 	--surface: light-dark(rgba(255, 255, 255, 0.94), rgba(24, 27, 31, 0.94)); /* content boxes */
 	--box-border: light-dark(#e7e7e7, #2a2e33);
+	--aside-bg: light-dark(rgba(51, 122, 183, 0.05), rgba(110, 168, 254, 0.06)); /* collapsible boxes in posts */
 	--gutter: 30px;
 }
 
@@ -654,6 +655,100 @@ a.off {
 
 @media (max-width: 767px) {
 	.box { padding: 15px; }
+}
+
+/* ---------- Posts ---------- */
+
+/* Long posts: keep lines at a comfortable reading length. */
+.post-body {
+	max-width: 46em;
+	line-height: 1.55;
+}
+
+.post-body h2 { margin-top: 30px; }
+
+.post-body li + li { margin-top: 4px; }
+
+/*
+ * Collapsible background boxes, closed by default:
+ *   <details class="aside" markdown="1">
+ *   <summary markdown="span">Title</summary>
+ *   Markdown text...
+ *   </details>
+ */
+.aside {
+	margin: 12px 0;
+	padding: 0 16px;
+	background-color: var(--aside-bg);
+	border: 1px solid var(--box-border);
+	border-radius: 8px;
+}
+
+.aside > summary {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	margin: 0 -16px;
+	padding: 9px 16px;
+	font-weight: 700;
+	list-style: none;
+	cursor: pointer;
+}
+
+.aside > summary::-webkit-details-marker { display: none; }
+
+/* Chevron: points right when closed, down when open. */
+.aside > summary::before {
+	flex: none;
+	width: 0.45em;
+	height: 0.45em;
+	border-right: 2px solid var(--subtle);
+	border-bottom: 2px solid var(--subtle);
+	transform: translateY(-0.1em) rotate(-45deg);
+	transition: transform 0.15s;
+	content: "";
+}
+
+.aside[open] > summary::before { transform: translateY(-0.2em) rotate(45deg); }
+
+.aside > summary:hover { color: var(--link-hover); }
+
+.aside[open] { padding-bottom: 14px; }
+
+.aside[open] > summary {
+	margin-bottom: 12px;
+	border-bottom: 1px solid var(--box-border);
+}
+
+.aside > :last-child { margin-bottom: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+	.aside > summary::before { transition: none; }
+}
+
+/* Tables scroll sideways on narrow screens instead of widening the page. */
+.post-body table {
+	display: block;
+	max-width: 100%;
+	margin: 0 0 10px;
+	overflow-x: auto;
+	font-size: 15px;
+	line-height: 1.4;
+	border-collapse: collapse;
+}
+
+.post-body th,
+.post-body td {
+	min-width: 9em;
+	padding: 6px 12px 6px 0;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid var(--box-border);
+}
+
+.post-body th {
+	font-weight: 700;
+	border-bottom-color: var(--year-rule);
 }
 
 /* ---------- Theme button ---------- */
