@@ -28,25 +28,14 @@ layout: default
 
 <div class="split">
 	<div>
-		{% if member.cv %}
+		{% if member.bluesky %}
 		<div class="smallhead">
-			CV
+			Bluesky
 		</div>
 		<div class="note">
 			<div class="smallspacer"></div>
-			{% include icon.html name="file-text" %}
-			<a class="off" href="{{ member.cv }}">{{ member.cv | split: '/' | last }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if member.twitter %}
-		<div class="smallhead">
-			Twitter
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="twitter" %}
-			<a class="off" href="https://twitter.com/{{ member.twitter }}">{{ member.twitter }}</a>
+			{% include icon.html name="bluesky" %}
+			<a class="off" href="https://bsky.app/profile/{{ member.bluesky }}">{{ member.bluesky }}</a>
 		</div>
 		<div class="bigspacer"></div>
 		{% endif %}

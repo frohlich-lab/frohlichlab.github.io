@@ -5,11 +5,10 @@ position: Principal Investigator
 nickname: Fabian
 handle: ff
 email: fabian.frohlich@crick.ac.uk
-twitter: fabfrohlich
+bluesky: frohlichlab.com
 github: ffroehlich
 scholar: pGYETGQAAAAJ
 image: /assets/images/team/ff.jpeg
-cv: /assets/pdfs/cvs/ff.pdf
 alum: false
 ---
 Fabian is a group leader at the [Francis Crick Institute].
