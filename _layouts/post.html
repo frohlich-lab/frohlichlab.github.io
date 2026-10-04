@@ -10,6 +10,15 @@ layout: default
     <div class="smallhead">
       {{ page.date | date_to_string }}
     </div>
+    {% if page.categories contains "blog" %}
+    {% comment %} Minutes from _plugins/reading_time.rb {% endcomment %}
+    {% assign minutes = content | reading_time %}
+    {% assign minutes_all = content | reading_time: "all" %}
+    <div class="smallnote subtle reading-time">
+      {{ minutes }} min read
+      {% if minutes_all > minutes %}<br>{{ minutes_all }} min with boxes{% endif %}
+    </div>
+    {% endif %}
   </div>
   <div class="note pt-20">
     <div class="post-body">
