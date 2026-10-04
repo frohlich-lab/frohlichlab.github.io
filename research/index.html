@@ -14,7 +14,8 @@ box: false
 </div>
 
 {% for project in site.research %}
-<section class="box">
+<section class="box research-theme">
+  <img class="research-icon" src="{{ project.icon }}" alt="" width="80" height="80">
   <h2 class="head item-heading">{{ project.title }}</h2>
   <div class="note">
     {{ project.content }}

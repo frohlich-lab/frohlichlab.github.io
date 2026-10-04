@@ -1,2 +1,3 @@
 # Our Research
-## Research Interests
+
+We seek to identify conserved, mechanistic principles of signalling heterogeneity by integrating quantitative perturbation proteomics with scientific machine learning (SciML). We turn biological knowledge into equations and make discoveries where these models break: when a model fails, the discrepancy points to regulation from outside the modelled pathway, or to biology that was lost in translating knowledge into equations. Our current projects apply this approach to cancer cell plasticity, with a focus on ERK and AKT signalling in breast and colorectal cancer cell lines and organoids. Two of our four themes address our core biological and modelling questions; the other two build the software and experimental platforms they rely on.
