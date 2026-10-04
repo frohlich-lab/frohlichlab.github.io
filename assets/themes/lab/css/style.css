@@ -227,9 +227,7 @@ hr {
 	left: 0;
 	z-index: 1030;
 	min-height: 51px;
-	background-color: #f8f8f8;
-	background-image: linear-gradient(to bottom, #fff 0, #f8f8f8 100%);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
+	background-color: #fff;
 }
 
 .site-header {
@@ -262,7 +260,6 @@ hr {
 	padding: 15px;
 	line-height: 20px;
 	color: var(--bar-fg);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .bar-links a:hover,
@@ -292,20 +289,19 @@ hr {
 
 .site-brand {
 	margin-left: -15px;
-	font-size: 30px;
+	font-size: 22px;
+	color: var(--fg);
 }
 
 .site-nav .bar-links {
 	margin-left: auto;
 	margin-right: -15px;
-	font-size: 30px;
+	font-size: 18px;
 }
 
 .site-nav a[aria-current="page"] {
-	color: #555;
-	background-color: #e7e7e7;
-	background-image: linear-gradient(to bottom, #ebebeb 0, #f3f3f3 100%);
-	box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+	color: var(--fg);
+	box-shadow: inset 0 -2px 0 var(--link);
 }
 
 .nav-toggle {
@@ -407,7 +403,7 @@ a.off {
 .head {
 	font-size: 32px;
 	font-weight: 300;
-	line-height: 30px;
+	line-height: 1.2;
 }
 
 .smallhead {
@@ -467,25 +463,15 @@ a.off {
 
 /* ---------- Home ---------- */
 
+/* Scales with the window, so it stays on one line on desktops and wraps cleanly on phones. */
 .home-title {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 137px;
-	margin: 1vh 0 0;
-	font-size: 50px;
+	margin: 30px 0 25px;
+	font-size: clamp(36px, 6vw, 72px);
 	font-weight: 300;
-	line-height: 50px;
+	line-height: 1.1;
 	text-align: center;
-	text-shadow: 1.5px 1.5px #fff;
 }
 
-@media (min-width: 1024px) {
-	.home-title {
-		font-size: 80px;
-		line-height: 80px;
-	}
-}
 
 .home-banner {
 	margin: 1vh 0;
@@ -497,10 +483,18 @@ a.off {
 .feed-item { padding-bottom: 20px; }
 .feed-item .smallnote { padding-top: 5px; }
 
+/* News and blog lists: titles sit in a narrow column. */
+.post-entry .head { font-size: 24px; }
+.post-entry .smallnote { margin-top: 4px; }
+
 .home-banner img {
 	max-width: 70%;
 	height: auto;
 	border: 1px solid #000;
+}
+
+@media (max-width: 767px) {
+	.home-banner img { max-width: 100%; }
 }
 
 /* ---------- Research and software lists, tool pages ---------- */
@@ -539,6 +533,9 @@ a.off {
 
 /* ---------- Team ---------- */
 
+/* Names sit next to the photo in a third of the page. */
+.member-card .head { font-size: 24px; }
+
 .member-card {
 	display: flex;
 	align-items: flex-start;
@@ -551,6 +548,8 @@ a.off {
 	height: 20vw;
 	min-height: 100px;
 	max-height: 150px;
+	aspect-ratio: 1;           /* same-size squares, whatever the photo's shape */
+	object-fit: cover;
 	border: 1px solid #000;
 }
 
