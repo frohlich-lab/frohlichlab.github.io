@@ -7,19 +7,35 @@
  * the old Bootstrap grid so the pages keep their previous layout.
  */
 
+/*
+ * Colours: light-dark(<light>, <dark>) picks a value from the page's colour
+ * scheme. By default that follows the visitor's system setting; the header
+ * button stores an explicit choice as data-theme on <html> (see default.html).
+ */
 :root {
+	color-scheme: light dark;
 	--font: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--fg: #000;
-	--bg: #fff;
-	--link: #337ab7;        /* was #428bca (3.6:1); darkened to pass WCAG AA (4.6:1) */
-	--link-hover: #23527c;
-	--subtle: #687a7c;      /* was #95a5a6 (2.6:1); darkened to pass WCAG AA (4.5:1) */
-	--bar-fg: #727272;      /* header/footer links; was #777 (4.2:1 on the bar) */
-	--bar-fg-hover: #333;
-	--bar-border: #e7e7e7;
-	--rule: #eee;
+	--fg: light-dark(#000, #e6e6e6);
+	--bg: light-dark(#fff, #121417);
+	--link: light-dark(#337ab7, #6ea8fe);        /* 4.6:1 / 8:1 on the background */
+	--link-hover: light-dark(#23527c, #9ec5fe);
+	--subtle: light-dark(#687a7c, #9aa5a6);      /* 4.5:1 / 7:1 */
+	--muted: light-dark(#999, #8a8f95);
+	--bar-bg: light-dark(#fff, #181b1f);
+	--bar-fg: light-dark(#727272, #a8adb3);      /* header/footer links */
+	--bar-fg-hover: light-dark(#333, #fff);
+	--bar-border: light-dark(#e7e7e7, #2a2e33);
+	--control-border: light-dark(#ddd, #3a3f45);
+	--control-fg: light-dark(#888, #aab0b6);
+	--rule: light-dark(#eee, #2a2e33);
+	--year-rule: light-dark(#808088, #5a5f66);
+	--photo-border: light-dark(#000, #3a3f45);
+	--life: light-dark(rgba(51, 122, 183, 0.14), rgba(110, 168, 254, 0.12)); /* background cells */
 	--gutter: 30px;
 }
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 /* ---------- Base ---------- */
 
@@ -64,7 +80,7 @@ h1 small {
 	font-size: 65%;
 	font-weight: 400;
 	line-height: 1;
-	color: #999;
+	color: var(--muted);
 }
 
 p { margin: 0 0 10px; }
@@ -227,7 +243,7 @@ hr {
 	left: 0;
 	z-index: 1030;
 	min-height: 51px;
-	background-color: #fff;
+	background-color: var(--bar-bg);
 }
 
 .site-header {
@@ -276,9 +292,10 @@ hr {
 
 .site-logo img {
 	display: block;
-	width: 50px;
-	height: 50px;
-	padding: 5px;
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	border-radius: 6px;        /* the logo has a white background: a tile in dark mode */
 }
 
 .site-nav {
@@ -309,20 +326,20 @@ hr {
 	margin: 8px 0 8px auto;
 	padding: 9px 10px;
 	background: transparent;
-	border: 1px solid #ddd;
+	border: 1px solid var(--control-border);
 	border-radius: 4px;
 	cursor: pointer;
 }
 
 .nav-toggle:hover,
-.nav-toggle:focus { background-color: #ddd; }
+.nav-toggle:focus { background-color: var(--control-border); }
 
 .nav-toggle__bar {
 	display: block;
 	width: 22px;
 	height: 2px;
 	border-radius: 1px;
-	background-color: #888;
+	background-color: var(--control-fg);
 }
 
 .nav-toggle__bar + .nav-toggle__bar { margin-top: 4px; }
@@ -354,7 +371,6 @@ hr {
 		padding: 7.5px 15px;
 		overflow-y: auto;
 		border-top: 1px solid var(--bar-border);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 	}
 
 	.js .site-nav:not(.is-open) { display: none; }
@@ -490,7 +506,7 @@ a.off {
 .home-banner img {
 	max-width: 70%;
 	height: auto;
-	border: 1px solid #000;
+	border: 1px solid var(--photo-border);
 }
 
 @media (max-width: 767px) {
@@ -526,7 +542,7 @@ a.off {
 .year-rule {
 	height: 2px;
 	border: none;
-	background-color: #808088;
+	background-color: var(--year-rule);
 }
 
 .paper-item { padding-bottom: 30px; }
@@ -550,14 +566,14 @@ a.off {
 	max-height: 150px;
 	aspect-ratio: 1;           /* same-size squares, whatever the photo's shape */
 	object-fit: cover;
-	border: 1px solid #000;
+	border: 1px solid var(--photo-border);
 }
 
 .big-member-photo {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	border: 1px solid #000;
+	border: 1px solid var(--photo-border);
 }
 
 @media (min-width: 992px) {
@@ -573,14 +589,68 @@ a.off {
 
 .alumni-title { text-align: center; }
 
+/* ---------- Theme button ---------- */
+
+.theme-toggle {
+	order: 2;                  /* after the menu on wide screens */
+	margin-left: 10px;
+	padding: 6px;
+	color: var(--bar-fg);
+	background: transparent;
+	border: 1px solid var(--control-border);
+	border-radius: 4px;
+	line-height: 0;
+	cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus { color: var(--bar-fg-hover); }
+
+html:not(.js) .theme-toggle { display: none; }
+
+.theme-toggle .icon {
+	width: 18px;
+	height: 18px;
+	vertical-align: 0;
+}
+
+/* Show the moon in light mode and the sun in dark mode (set by default.html). */
+.theme-toggle[data-current="light"] .icon-sun,
+.theme-toggle[data-current="dark"] .icon-moon { display: none; }
+
+@media (max-width: 767px) {
+	/* Next to the menu button, before the opened menu. */
+	.theme-toggle {
+		order: 0;
+		margin-left: auto;
+	}
+
+	.nav-toggle { margin-left: 10px; }
+}
+
+/* ---------- Game of Life background (assets/themes/lab/js/life.js) ---------- */
+
+.life {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	color: var(--life);       /* read by life.js as the cell colour */
+}
+
 /* ---------- Print ---------- */
 
 /* Like Bootstrap's print styles: no fixed bars, which would repeat on
    every printed page and cover content. */
 @media print {
+	:root { color-scheme: light; }   /* dark text on paper, whatever the theme */
+
 	.site-header,
 	.site-footer,
-	.skip-link { display: none; }
+	.skip-link,
+	.life { display: none; }
 
 	.site-main {
 		padding-top: 0;

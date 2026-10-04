@@ -46,6 +46,10 @@ repository: frohlich-lab/frohlichlab.github.io
 url: https://www.frohlichlab.com
 baseurl: ""
 
+# Colour theme for visitors who haven't picked one with the header button:
+# auto (follow their system setting), dark or light.
+theme_default: auto
+
 title : Fröhlich Lab
 tagline: Dynamics of Living Systems Lab
 institution:
