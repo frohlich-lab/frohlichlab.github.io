@@ -6,10 +6,8 @@ group: navigation
 navorder: 3
 ---
 
-<div class="bigspacer"></div>
-
 {% assign current_team = site.categories.team | where: "alum","false"%}
-<div class="columns-3 team-grid">
+<div class="columns-3 team-grid pt-20">
 {% for member in current_team reversed %}
 	<div class="member-card">
 		<a href="{{ member.url }}">
@@ -22,18 +20,12 @@ navorder: 3
 	</div>
 {% endfor %}
 </div>
-<div class="bigspacer"></div>
 
-<div class="bigspacer"></div>
-<hr/>
-
-<div class="bigspacer"></div>
-<hr/>
+<hr class="double-rule">
 <h2 class="title alumni-title">Alumni</h2>
-<div class="bigspacer"></div>
 
 {% assign alumni = site.categories.team | where: "alum","true"%}
-<div class="columns-3 team-grid">
+<div class="columns-3 team-grid pt-20">
 {% for member in alumni %}
 	<div class="member-card">
 		<div>
@@ -43,4 +35,3 @@ navorder: 3
 	</div>
 {% endfor %}
 </div>
-<div class="bigspacer"></div>

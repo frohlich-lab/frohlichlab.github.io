@@ -4,19 +4,9 @@
     posts       - the posts to list, e.g. site.categories.news
     link_titles - link each title to the post's own page
 {% endcomment %}
-<div class="bigspacer"></div>
-
+<div class="pt-20">
 {% for post in include.posts %}
-
-	{% assign author = nil %}
-	{% for member in site.categories.team %}
-		{% if member.handle == post.author_handle %}
-			{% assign author = member %}
-		{% endif %}
-	{% endfor %}
-
-	<div class="bigspacer"></div>
-	<article class="split">
+	<article class="split pt-20">
 		<div>
 			<h2 class="head">
 				{% if include.link_titles %}
@@ -27,13 +17,9 @@
 			</h2>
 			<div class="smallnote">
 				{{ post.date | date_to_string }}
-				{% if author %}
-				by <a class="off" href="{{ author.url }}">{{ author.nickname }}</a>
-				{% endif %}
 			</div>
 		</div>
-		<div>
-			<div class="smallspacer"></div>
+		<div class="pt-5">
 			{% if post.image %}
 			<a href="{{ post.url }}"><img src="{{ post.image }}" alt="{{ post.title | escape }}"></a>
 			{% endif %}
@@ -42,7 +28,5 @@
 			</div>
 		</div>
 	</article>
-
 {% endfor %}
-
-<div class="bigspacer"></div>
+</div>

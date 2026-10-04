@@ -5,37 +5,16 @@ description: "Papers of the lab"
 group: navigation
 navorder: 1
 ---
-
-<div class="bigspacer"></div>
-
-{% for paper in site.categories.papers %}
-{% capture prev_year %}{{ this_year }}{% endcapture %}
-{% capture this_year %}{{ paper.year }}{% endcapture %}
-
-{% if forloop.first %}
-  <h1>{{ this_year }}</h1>
-  <hr class="year-rule">
-  <div class="columns-3-lg">
-{% elsif this_year != prev_year and this_year > "2012" %}
+{% assign years = site.categories.papers | group_by: "year" %}
+{% for year in years %}
+<h1{% if forloop.first %} class="pt-20"{% endif %}>{{ year.name }}</h1>
+<hr class="year-rule">
+<div class="columns-3-lg">
+  {% for paper in year.items %}
+  <div class="paper-item">
+    <div class="smallhead"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
+    <p class="note">{{ paper.ref }}</p>
   </div>
-  {% if this_year != "2013" %}
-  <h1>{{ this_year }}</h1>
-  {% else %}
-  <h1>2013 and earlier</h1>
-  {% endif %}
-  <hr class="year-rule">
-  <div class="columns-3-lg">
-{% endif %}
-    <div>
-      <div class="smallhead"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
-      <p class="note">{{ paper.ref }}</p>
-      {% if paper.image %}
-      <a href="{{ paper.url }}">
-        <img width="100" src="{{ paper.image }}" alt="{{ paper.title | escape }}">
-      </a>
-      {% endif %}
-      <div class="bigspacer"></div>
-      <div class="spacer"></div>
-    </div>
+  {% endfor %}
+</div>
 {% endfor %}
-  </div>

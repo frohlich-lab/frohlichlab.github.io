@@ -2,8 +2,6 @@
 layout: member
 title: "Fabian Fröhlich"
 position: Principal Investigator
-nickname: Fabian
-handle: ff
 email: fabian.frohlich@crick.ac.uk
 bluesky: frohlichlab.com
 github: ffroehlich

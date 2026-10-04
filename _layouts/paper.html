@@ -1,20 +1,16 @@
 ---
 layout: default
 ---
-<!--
+{% comment %}
 Branched from Trevor Bedford's source, https://github.com/blab/blotter/blob/master/_layouts/paper.html
-with gratitude.
--->
+with gratitude. Pages are generated from bibliography.bib by _plugins/papers.rb.
+{% endcomment %}
+{% assign fulltext = page.pdf | default: page.pdflink %}
+{% if page.pdf %}{% assign fulltext_text = "PDF" %}{% elsif page.preprint %}{% assign fulltext_text = "Preprint PDF" %}{% else %}{% assign fulltext_text = "Journal PDF" %}{% endif %}
+{% assign code_text = page.code | remove: 'http://' | remove: 'https://' %}
 
-<div class="bigspacer"></div>
-
-<div class="split split-wide">
-	<div>
-		{% if page.image %}
-		<img class="paper-image" src="{{ page.image }}" alt="">
-		{% endif %}
-	</div>
-
+<div class="split split-wide pt-20">
+	<div></div>{% comment %} empty sidebar column keeps the title aligned with the abstract {% endcomment %}
 	<div>
 		{% if page.preprint %}
 		<div class="smallhead">
@@ -22,150 +18,19 @@ with gratitude.
 		</div>
 		{% endif %}
 		<h1 class="title item-heading">{{ page.title }}</h1>
-		<div class="smallspacer"></div>
-		<div class="smallhead">
-			{{ page.authors }},
-			<span class="journal">
-			{{ page.journal }}
-			</span>
-			{% if page.volume %}
-			 {{ page.volume }}
-			{% endif %}
-			{% if page.issue %}
-			({{ page.issue }})
-			{% endif %}
-			{% if page.pages %}
-			:{{ page.pages }}
-			{% endif %}
-			({{ page.year }}).
+		<div class="smallhead pt-5">
+			{{ page.authors }}, <span class="journal">{{ page.journal }}</span>{% if page.volume %} {{ page.volume }}{% endif %}{% if page.issue %} ({{ page.issue }}){% endif %}{% if page.pages %} :{{ page.pages }}{% endif %} ({{ page.year }}).
 		</div>
 	</div>
 </div>
 
-<div class="bigspacer"></div>
-
-<div class="split">
-	<aside class="note">
-		<div class="bigspacer"></div>
-		{% if page.pdf or page.pdflink or page.fulltext %}
-		<div class="smallhead subtle">
-			Full text
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% if page.pdflink %}
-				{% include icon.html name="file" %}
-				{% if page.preprint %}
-				<a class="off" href="{{ page.pdflink }}">Preprint PDF</a>
-				{% else %}
-				<a class="off" href="{{ page.pdflink }}">Journal PDF</a>
-				{% endif %}
-				<br/>
-			{% endif %}
-			{% if page.pdf %}
-				{% include icon.html name="file" %}
-				<a class="off" href="{{ page.pdf }}">PDF</a>
-				<br/>
-			{% endif %}
-			{% if page.fulltext %}
-			{% include icon.html name="external-link" %}
-			{% if page.preprint %}
-			<a class="off" href="{{ page.fulltext }}">Preprint HTML</a>
-			{% else %}
-			<a class="off" href="{{ page.fulltext }}">Journal HTML</a>
-			{% endif %}
-			{% endif %}
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-
-		{% if page.supplement %}
-		<div class="smallhead subtle">
-			Supplement
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="paperclip" %}
-			<a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-
-		{% if page.pmid or page.pmcid %}
-		<div class="smallhead subtle">
-			PubMed
-		</div>
-		{% if page.pmid %}
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="external-link" %}
-			<a class="off" href="http://www.ncbi.nlm.nih.gov/pubmed/{{ page.pmid }}">{{ page.pmid }}</a>
-		</div>
-		{% endif %}
-		{% if page.pmcid %}
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="external-link" %}
-			<a class="off" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{ page.pmcid }}">{{ page.pmcid }}</a>
-		</div>
-		{% endif %}
-		<div class="bigspacer"></div>
-		{% endif %}
-
-		{% if page.doi %}
-		<div class="smallhead subtle">
-			DOI
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="external-link" %}
-			<a class="off" href="http://dx.doi.org/{{ page.doi }}">{{ page.doi }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-
-		{% if page.code %}
-		<div class="smallhead subtle">
-			Code
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="settings" %}
-			<a class="off" href="{{ page.code }}">{{ page.code | remove: 'http://' | remove: 'https://' }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if page.dryad_doi %}
-		<div class="smallhead subtle">
-			Data
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="database" %}
-			<a class="off" href="http://dx.doi.org/{{ page.dryad_doi }}">Dryad</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if page.figshare_doi %}
-		<div class="smallhead subtle">
-			Data
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="database" %}
-			<a class="off" href="http://doi.org/{{ page.figshare_doi }}">Figshare</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
+<div class="split pt-20">
+	<aside class="note pt-20">
+		{% include link_item.html subtle=true label="Full text" icon="file" value=fulltext text=fulltext_text %}
+		{% include link_item.html subtle=true label="DOI" icon="external-link" value=page.doi prefix="https://doi.org/" %}
+		{% include link_item.html subtle=true label="Code" icon="settings" value=page.code text=code_text %}
 	</aside>
-
 	<div class="post">
-		{% if page.embargo %}
-		In press...watch this space!
-		{% else %}
 		{{ content }}
-		{% endif %}
 	</div>
 </div>
-
-<div class="bigspacer"></div>

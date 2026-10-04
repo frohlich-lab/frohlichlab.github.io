@@ -75,7 +75,7 @@ Now add it to the repository, commit and push your branch:
 
 This new announcement won't yet be public. The section after next shows you how to do that.
 
-The same basic process is used to add team members (`team/_posts`, `layout: member`), tools (`tools/_posts`, `layout: tool`), blog posts (`blog/_posts`) and research topics (`research/_posts`).
+The same basic process is used to add team members (`team/_posts`, `layout: member`), tools (`tools/_posts`, `layout: project`), blog posts (`blog/_posts`) and research topics (`research/_posts`).
 
 ## Adding a paper
 

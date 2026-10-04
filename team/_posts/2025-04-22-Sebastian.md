@@ -2,8 +2,6 @@
 layout: member
 title: Sebastian Persson
 position: Postdoctoral Fellow
-nickname: Sebastian
-handle: sp
 github: sebapersson
 scholar: H838gdoAAAAJ
 orcid: 0009-0001-2304-4263

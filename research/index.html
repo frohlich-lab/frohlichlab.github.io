@@ -9,10 +9,8 @@ navorder: 0
 {% capture research_text %}{% include research.md %}{% endcapture %}
 {{ research_text | markdownify }}
 
-<div class="hugespacer"></div>
-
 {% for project in site.categories.research %}
-  <div class="split split-narrow">
+  <div class="split split-narrow pt-50">
     <div class="logobox">
       <img height="100%" src="{{ project.image }}" alt="">
     </div>
@@ -25,7 +23,6 @@ navorder: 0
       </div>
     </div>
   </div>
-  <div class="hugespacer"></div>
 {% endfor %}
 
-<p>Images generated with AI.</p>
+<p class="pt-50">Images generated with AI.</p>

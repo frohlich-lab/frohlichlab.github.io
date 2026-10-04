@@ -6,10 +6,8 @@ group: navigation
 navorder: 2
 ---
 
-<div class="bigspacer"></div>
-
 {% for project in site.categories.tools %}
-  <div class="split split-narrow">
+  <div class="split split-narrow pt-20">
     <div class="logobox">
       {% if project.image %}
       <a href="{{ project.url }}">
@@ -20,8 +18,7 @@ navorder: 2
     <div class="projectbox">
       <div>
         <h2 class="head item-heading"><a href="{{ project.url }}" class="off">{{ project.title }}</a></h2>
-        <div class="smallspacer"></div>
-        <p class="note">
+        <p class="note pt-5">
           {% include icon.html name="github" %}
           <a class="off" href="https://github.com/{{ project.github }}">{{ project.github }}</a>
           &#8212;
@@ -33,7 +30,4 @@ navorder: 2
       </div>
     </div>
   </div>
-  <div class="bigspacer"></div>
 {% endfor %}
-
-<div class="bigspacer"></div>

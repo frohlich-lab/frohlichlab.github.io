@@ -1,0 +1,20 @@
+{%- comment -%}
+  Sidebar entry on member, paper and project pages: a small heading with one
+  icon + link underneath. Renders nothing when `value` is empty.
+    label  - heading, e.g. "GitHub"
+    icon   - icon name for icon.html
+    value  - identifier or URL; also the link text unless `text` is given
+    prefix - prepended to value to form the link, e.g. "https://github.com/"
+    text   - link text (optional)
+    nolink - show the text without a link
+    subtle - grey heading
+{%- endcomment -%}
+{%- if include.value -%}
+<div class="link-item">
+	<div class="smallhead{% if include.subtle %} subtle{% endif %}">{{ include.label }}</div>
+	<div class="note">
+		{% include icon.html name=include.icon %}
+		{% if include.nolink %}{{ include.text | default: include.value }}{% else %}<a class="off" href="{{ include.prefix }}{{ include.value }}">{{ include.text | default: include.value }}</a>{% endif %}
+	</div>
+</div>
+{%- endif -%}

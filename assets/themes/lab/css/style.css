@@ -202,10 +202,21 @@ hr {
 	}
 }
 
-.hugespacer { height: 50px; }
-.bigspacer { height: 20px; }
-.spacer { height: 10px; }
-.smallspacer { height: 5px; }
+/*
+ * Vertical spacing between blocks. Padding rather than margin, so it never
+ * collapses with neighbouring margins, matching the empty spacer divs it replaced.
+ */
+.pt-5 { padding-top: 5px; }
+.pt-20 { padding-top: 20px; }
+.pt-50 { padding-top: 50px; }
+.pb-20 { padding-bottom: 20px; }
+
+/* Heading above a list of papers on member and project pages. */
+.list-heading { padding: 20px 0 10px; }
+
+/* Sidebar entries from _includes/link_item.html. */
+.link-item { padding-bottom: 20px; }
+.link-item .note { padding-top: 5px; }
 
 /* ---------- Header and footer bars ---------- */
 
@@ -481,6 +492,11 @@ a.off {
 	text-align: center;
 }
 
+.home-feeds h2 { padding-bottom: 20px; }
+.home-feeds section { padding-bottom: 20px; }
+.feed-item { padding-bottom: 20px; }
+.feed-item .smallnote { padding-top: 5px; }
+
 .home-banner img {
 	max-width: 70%;
 	height: auto;
@@ -519,11 +535,7 @@ a.off {
 	background-color: #808088;
 }
 
-.paper-image {
-	display: block;
-	width: 200px;
-	max-width: 100%;
-}
+.paper-item { padding-bottom: 30px; }
 
 /* ---------- Team ---------- */
 
@@ -551,6 +563,13 @@ a.off {
 
 @media (min-width: 992px) {
 	.team-grid { row-gap: 20px; }
+}
+
+/* Two rules 60px apart above the alumni list (height includes both 1px borders). */
+.double-rule {
+	height: 62px;
+	margin-top: 60px;
+	border-bottom: 1px solid var(--rule);
 }
 
 .alumni-title { text-align: center; }

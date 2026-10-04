@@ -3,10 +3,11 @@ layout: default
 ---
 
 {% assign member = page %}
+{% assign lastname = member.title | split: ' ' | last %}
+{% assign papers = site.categories.papers | where_exp: "paper", "paper.authors contains lastname" %}
+{% capture email %}{{ member.email | split: '@' | first }}<span style="display:none">obfuscate</span>@{{ member.email | split: '@' | last }}{% endcapture %}
 
-<div class="bigspacer"></div>
-
-<div class="split">
+<div class="split pt-20">
 	<div>
 		{% if member.image %}
 		<img class="big-member-photo" src="{{ member.image }}" alt="{{ member.title }}">
@@ -24,106 +25,20 @@ layout: default
 	</div>
 </div>
 
-<div class="bigspacer"></div>
-
-<div class="split">
+<div class="split pt-20">
 	<div>
-		{% if member.bluesky %}
-		<div class="smallhead">
-			Bluesky
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="bluesky" %}
-			<a class="off" href="https://bsky.app/profile/{{ member.bluesky }}">{{ member.bluesky }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if member.github %}
-		<div class="smallhead">
-			GitHub
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="github" %}
-			<a class="off" href="https://github.com/{{ member.github }}">{{ member.github }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if member.scholar %}
-		<div class="smallhead">
-			Google Scholar
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="book" %}
-			<a class="off" href="http://scholar.google.com/citations?user={{ member.scholar }}">{{ member.title }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if member.orcid %}
-		<div class="smallhead">
-			ORCID
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="orcid" %}
-			<a class="off" href="https://orcid.org/{{ member.orcid }}">{{ member.orcid }}</a>
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
-		{% if member.email %}
-		{% assign emailarray = member.email | split: '@' %}
-		<div class="smallhead">
-			Email
-		</div>
-		<div class="note">
-			<div class="smallspacer"></div>
-			{% include icon.html name="inbox" %}
-			{{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
-		</div>
-		<div class="bigspacer"></div>
-		{% endif %}
+		{% include link_item.html label="Bluesky" icon="bluesky" value=member.bluesky prefix="https://bsky.app/profile/" %}
+		{% include link_item.html label="GitHub" icon="github" value=member.github prefix="https://github.com/" %}
+		{% include link_item.html label="Google Scholar" icon="book" value=member.scholar prefix="https://scholar.google.com/citations?user=" text=member.title %}
+		{% include link_item.html label="ORCID" icon="orcid" value=member.orcid prefix="https://orcid.org/" %}
+		{% include link_item.html label="Email" icon="inbox" value=member.email text=email nolink=true %}
 	</div>
 	<div>
-		{% assign lastname = member.title | split: ' ' | last %}
-		{% for paper in site.categories.papers %}
-			{% if paper.authors contains lastname %}
-				{% assign papersq = true %}
-			{% endif %}
+		{% if papers.size > 0 %}
+		<h2 class="head list-heading">Papers</h2>
+		{% for paper in papers %}
+		<p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></p>
 		{% endfor %}
-
-		{% if papersq == true %}
-			<div class="bigspacer"></div>
-			<h2 class="head">Papers</h2>
-			<div class="spacer"></div>
-			{% for paper in site.categories.papers %}
-				{% if paper.authors contains lastname %}
-					{% if paper.embargo %}
-					<p>{{ paper.title }}</p>
-					{% else %}
-					<p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></p>
-					{% endif %}
-				{% endif %}
-			{% endfor %}
 		{% endif %}
-
-		{% for post in site.categories.blog %}
-			{% if member.handle == post.author_handle %}
-				{% assign postsq = true %}
-			{% endif %}
-		{% endfor %}
-
-		{% if postsq == true %}
-			<div class="bigspacer"></div>
-			<h2 class="head">Posts</h2>
-			<div class="spacer"></div>
-			{% for post in site.categories.blog %}
-				{% if member.handle == post.author_handle %}
-					<p><a href="{{ post.url }}" class="off">{{ post.title }}</a></p>
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-
 	</div>
 </div>

@@ -1,9 +1,12 @@
 ---
 layout: default
 ---
-<div class="bigspacer"></div>
+{% comment %} Research projects (research/_posts) and software tools (tools/_posts). {% endcomment %}
+{% if page.github %}
+{% assign papers = site.categories.papers | where_exp: "paper", "paper.code contains page.github" %}
+{% endif %}
 
-<div class="split split-narrow">
+<div class="split split-narrow pt-20">
   <div>
     <div class="logobox">
       {% if page.image %}
@@ -11,8 +14,7 @@ layout: default
       {% endif %}
     </div>
     {% if page.github %}
-    <div class="note">
-      <div class="smallspacer"></div>
+    <div class="note pt-5">
       {% include icon.html name="github" %}
       <a class="off" href="https://github.com/{{ page.github }}">{{ page.github }}</a>
     </div>
@@ -21,10 +23,15 @@ layout: default
 
   <div>
     <h1 class="title item-heading">{{ page.title }}</h1>
-    <div class="tagline">{{page.tagline}}</div>
-    <div class="bigspacer"></div>
-    <div class="post">
+    <div class="tagline">{{ page.tagline }}</div>
+    <div class="post pt-20">
       {{ content }}
     </div>
+    {% if papers.size > 0 %}
+    <h2 class="head list-heading">Papers</h2>
+    {% for paper in papers %}
+    <p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></p>
+    {% endfor %}
+    {% endif %}
   </div>
 </div>
