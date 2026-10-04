@@ -61,6 +61,17 @@ layout: default
 		</div>
 		<div class="bigspacer"></div>
 		{% endif %}
+		{% if member.orcid %}
+		<div class="smallhead">
+			ORCID
+		</div>
+		<div class="note">
+			<div class="smallspacer"></div>
+			{% include icon.html name="orcid" %}
+			<a class="off" href="https://orcid.org/{{ member.orcid }}">{{ member.orcid }}</a>
+		</div>
+		<div class="bigspacer"></div>
+		{% endif %}
 		{% if member.email %}
 		{% assign emailarray = member.email | split: '@' %}
 		<div class="smallhead">

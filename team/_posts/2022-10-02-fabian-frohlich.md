@@ -8,6 +8,7 @@ email: fabian.frohlich@crick.ac.uk
 bluesky: frohlichlab.com
 github: ffroehlich
 scholar: pGYETGQAAAAJ
+orcid: 0000-0002-5360-4292
 image: /assets/images/team/ff.jpeg
 alum: false
 ---

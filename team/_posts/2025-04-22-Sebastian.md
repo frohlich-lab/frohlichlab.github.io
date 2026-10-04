@@ -6,6 +6,7 @@ nickname: Sebastian
 handle: sp
 github: sebapersson
 scholar: H838gdoAAAAJ
+orcid: 0009-0001-2304-4263
 image: /assets/images/team/Sebastian.jpg
 alum: true
 last_seen: Novo Nordisk
